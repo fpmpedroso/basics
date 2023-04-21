@@ -13,7 +13,7 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - fonte padrão: Lora;
 - fonte do logotipo: FiraCode;
 - estrutura do loader: loading_animation_widget ^1.2.0+4;
-- estrutura do snackbar: top_snackbar_flutter ^2.1.1
+- estrutura do snackbar: top_snackbar_flutter ^3.0.0+1
 
 
 ## tarefas
