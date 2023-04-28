@@ -26,6 +26,7 @@ class _SplashPageState extends State<SplashPage>
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       //await Future.delayed(const Duration(seconds: 3));
       //Navigator.of(context).pushNamed('/home');
+      Navigator.of(context).popAndPushNamed('/home');
     });
   }
 
@@ -92,16 +93,6 @@ class _SplashPageState extends State<SplashPage>
                   fontSize: 15,
                   backgroundColor: Colors.black),
             ),
-            ButtonWidget(
-                onPressed: () async {
-                  showLoader();
-                  await Future.delayed(const Duration(seconds: 3));
-                  hideLoader();
-                  showSuccess('erro');
-                },
-                style: context.buttonsApp.primaryButton,
-                labelStyle: context.textsApp.textBold,
-                label: 'Teste'),
           ],
         ),
       ),

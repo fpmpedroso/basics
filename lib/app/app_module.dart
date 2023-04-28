@@ -2,6 +2,8 @@
 // faz o direcinamento para o carregamento de MaterialApp através de AppWidget()
 
 import 'package:basics/app/app_widget.dart';
+import 'package:basics/app/core/logger/app_logger.dart';
+import 'package:basics/app/core/logger/app_logger_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,8 +14,8 @@ class AppModule extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider(
-          create: (_) => 'futuro provider'
+        Provider<AppLogger>(
+          create: (_) => AppLoggerImpl()
         ),
       ],
       child: const AppWidget(),

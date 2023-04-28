@@ -14,6 +14,7 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - fonte do logotipo: FiraCode;
 - estrutura do loader: loading_animation_widget ^1.2.0+4;
 - estrutura do snackbar: top_snackbar_flutter ^3.0.0+1
+- personalização do log: logger ^1.3.0
 
 
 ## tarefas
@@ -63,3 +64,4 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - importa-se o snackbar top_snackbar_flutter;
 - cria-se o arquivo /app/core/ui/helpers/messages.dart;
 - insere-se o mixin na splash_page.dart ("with...");
+- configura-se o logger;
