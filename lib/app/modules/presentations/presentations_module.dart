@@ -1,8 +1,8 @@
 import 'package:basics/app/core/modules/projeto_module.dart';
 import 'package:basics/app/modules/presentations/new_project/new_project_page.dart';
 
-class NewProjectModule extends ProjetoModule {
-  NewProjectModule() : super(
+class PresentationsModule extends ProjetoModule {
+  PresentationsModule() : super(
     routers: {
       '/newProject':(context) => const NewProjectPage(),
     }

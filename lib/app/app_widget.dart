@@ -3,7 +3,7 @@
 // cada rota foi configurada para que faça seu próprio carregamento de dependências
 
 import 'package:basics/app/modules/home/home_module.dart';
-import 'package:basics/app/modules/presentations/new_project_module.dart';
+import 'package:basics/app/modules/presentations/presentations_module.dart';
 import 'package:basics/app/modules/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'core/ui/theme/theme_app.dart';
@@ -19,7 +19,7 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         ...HomeModule().routers,
-        ...NewProjectModule().routers,
+        ...PresentationsModule().routers,
       },
       //home: const SplashPage(),
       home: const SplashPage()
