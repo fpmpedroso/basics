@@ -24,11 +24,11 @@ class ThemeApp {
       elevation: 0,
       titleTextStyle: TextsApp.instance.textBold.copyWith(
         fontSize: 20,
-        color: ColorsApp.instance.darkOrange
+        color: ColorsApp.instance.whiteApp
       ),
       centerTitle: true,
       iconTheme: IconThemeData(
-        color: ColorsApp.instance.darkOrange,
+        color: ColorsApp.instance.whiteApp,
       ),
     ),
     

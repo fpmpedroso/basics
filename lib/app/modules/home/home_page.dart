@@ -1,6 +1,3 @@
-import 'package:basics/app/core/ui/styles/buttons_app.dart';
-import 'package:basics/app/core/ui/styles/colors_app.dart';
-import 'package:basics/app/core/ui/styles/texts_app.dart';
 import 'package:basics/app/core/ui/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +23,30 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).pushNamed('/newProject');
                 },
                 label: 'Criar projeto'
+              ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/runServer');
+                },
+                label: 'Rodar servidor'
+              ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/topMenu');
+                },
+                label: 'Top menu'
+              ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/containers');
+                },
+                label: 'Containers'
+              ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/newImage');
+                },
+                label: 'Imagens'
               ),
             ],
           ),

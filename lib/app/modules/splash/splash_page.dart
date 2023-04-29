@@ -3,10 +3,8 @@
 
 import 'package:basics/app/core/ui/helpers/loader.dart';
 import 'package:basics/app/core/ui/helpers/messages.dart';
-import 'package:basics/app/core/ui/styles/buttons_app.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
-import 'package:basics/app/core/ui/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
