@@ -48,6 +48,24 @@ class HomePage extends StatelessWidget {
                 },
                 label: 'Imagens'
               ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/howNavigate');
+                },
+                label: 'Navegação'
+              ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/rotations');
+                },
+                label: 'Rotação'
+              ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/buttonsType');
+                },
+                label: 'Tipos de botões'
+              ),
             ],
           ),
         ),
