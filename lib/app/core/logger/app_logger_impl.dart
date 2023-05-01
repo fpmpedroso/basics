@@ -2,7 +2,7 @@
 
 /// USO:
 /// - injeção de dependência em app_module (tipada a classe abstrata);
-/// - variável que contenha uma instância de read();
+/// - variável que contenha uma instância de read() tipando a classe abstrata (ex em how_navigate_page.dart);
 /// - acionamento do método desejado;
 /// - para uso do append, ex:
 ///             log.append('xx');

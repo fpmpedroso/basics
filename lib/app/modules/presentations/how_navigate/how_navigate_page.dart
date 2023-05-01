@@ -1,13 +1,17 @@
+import 'package:basics/app/core/logger/app_logger.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
 import 'package:basics/app/core/ui/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HowNavigatePage extends StatelessWidget {
   const HowNavigatePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    AppLogger log = context.read<AppLogger>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Navegação'),
@@ -122,7 +126,7 @@ class HowNavigatePage extends StatelessWidget {
                     var message =
                         await Navigator.of(context).pushNamed('/param');
 
-                    print(message);
+                    log.info(message);
                   },
                   label: 'Espere a msg e faça um print'),
             ),

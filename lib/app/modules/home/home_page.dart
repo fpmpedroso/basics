@@ -66,6 +66,12 @@ class HomePage extends StatelessWidget {
                 },
                 label: 'Tipos de botões'
               ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/exampleListView');
+                },
+                label: 'List View'
+              ),
             ],
           ),
         ),

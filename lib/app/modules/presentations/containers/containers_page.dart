@@ -105,6 +105,30 @@ class ContainersPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100)
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                '> 5) Degradê',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: context.percentWidth(0.5),
+                height: context.percentWidth(0.5),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      context.colors.darkBlue,
+                      context.colors.lightBlue,
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(8)
+                ),
+              ),
             ],
           ),
         ),
