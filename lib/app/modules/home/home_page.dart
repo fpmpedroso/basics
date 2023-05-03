@@ -78,6 +78,12 @@ class HomePage extends StatelessWidget {
                 },
                 label: 'Complex Screen'
               ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/dialogs');
+                },
+                label: 'Dialogs'
+              ),
             ],
           ),
         ),
