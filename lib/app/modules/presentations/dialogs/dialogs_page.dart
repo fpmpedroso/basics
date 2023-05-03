@@ -128,17 +128,18 @@ class DialogsPage extends StatelessWidget {
                   .copyWith(fontSize: 14, color: context.colors.darkGrey),
             ),
             ElevatedButton(
-              onPressed: () async {
-                //await para esperar retornar o valor
-                final selectedTime = await showTimePicker(
-                  context: context, 
-                  initialTime: TimeOfDay.now()
-                );
+                onPressed: () async {
+                  //await para esperar retornar o valor
+                  final selectedTime = await showTimePicker(
+                      context: context, initialTime: TimeOfDay.now());
 
-                log.info(selectedTime);
-              },
-              child: const Text('Open TimePicker')
-            ),
+                  log.append(selectedTime.toString());
+                  log.append(selectedTime?.hour.toString());
+                  log.append(selectedTime?.minute.toString());
+                  log.closeAppend();
+                  log.info(selectedTime);
+                },
+                child: const Text('Open TimePicker')),
             const SizedBox(
               height: 20,
             ),
@@ -148,7 +149,7 @@ class DialogsPage extends StatelessWidget {
                   .copyWith(fontSize: 14, color: context.colors.darkGrey),
             ),
             ElevatedButton(
-              onPressed: (){}, 
+              onPressed: () {},
               child: const Text('Open DatePicker'),
             ),
           ],
