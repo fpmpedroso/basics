@@ -1,16 +1,21 @@
+import 'package:basics/app/core/logger/app_logger.dart';
 import 'package:basics/app/core/ui/helpers/size_extensions.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class NewImagePage extends StatelessWidget {
-
-  const NewImagePage({ Key? key }) : super(key: key);
+  const NewImagePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    AppLogger log = context.read<AppLogger>();
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Nova Imagem'),),
+      appBar: AppBar(
+        title: const Text('Nova Imagem'),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 50, left: 6, right: 6),
@@ -114,7 +119,7 @@ class NewImagePage extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                '> 2) "Image.network"',
+                '> 2) "Image.network" com possível erro de carregamento',
                 style: context.textsApp.textRegular
                     .copyWith(fontSize: 14, color: context.colors.darkGrey),
               ),
@@ -129,6 +134,13 @@ class NewImagePage extends StatelessWidget {
                   child: Image.network(
                     'https://turistaprofissional.com/wp-content/uploads/2016/10/aurora-boreal-na-noruega.jpg',
                     fit: BoxFit.fill,
+                    errorBuilder: (context, error, stackTrace) {
+                      log.error('Img não carregou', error, stackTrace);
+                      return Image.asset(
+                        'assets/images/img_demo.jpeg',
+                        fit: BoxFit.contain,
+                      );
+                    },
                   ),
                 ),
               ),
@@ -151,6 +163,9 @@ class NewImagePage extends StatelessWidget {
                   height: context.percentWidth(0.6),
                   fit: BoxFit.contain,
                 ),
+              ),
+              const SizedBox(
+                height: 20,
               ),
             ],
           ),

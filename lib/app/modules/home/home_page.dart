@@ -72,6 +72,12 @@ class HomePage extends StatelessWidget {
                 },
                 label: 'List View'
               ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/complexScreen');
+                },
+                label: 'Complex Screen'
+              ),
             ],
           ),
         ),

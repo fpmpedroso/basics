@@ -1,5 +1,6 @@
 import 'package:basics/app/core/modules/projeto_module.dart';
 import 'package:basics/app/modules/presentations/buttons_type/buttons_type_page.dart';
+import 'package:basics/app/modules/presentations/complex_screen/complex_screen_page.dart';
 import 'package:basics/app/modules/presentations/containers/containers_page.dart';
 import 'package:basics/app/modules/presentations/example_list_view/example_list_view_page.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.dart';
@@ -21,6 +22,7 @@ class PresentationsModule extends ProjetoModule {
       '/rotations' : (context) => const RotationsPage(),
       '/buttonsType' : (context) => const ButtonsTypePage(),
       '/exampleListView' : (context) => const ExampleListViewPage(),
+      '/complexScreen' : (context) => const ComplexScreenPage(),
     }
   );
 }

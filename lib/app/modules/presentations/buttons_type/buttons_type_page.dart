@@ -16,6 +16,13 @@ class ButtonsTypePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Tipos de botões'),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: (){}, 
+        label: const Text('FloatActionButton'),
+        icon: const Icon(Icons.schedule),
+        backgroundColor: context.colors.mediumBlue,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Padding(
         padding: const EdgeInsets.only(top: 50, left: 6, right: 6),
         child: Column(
