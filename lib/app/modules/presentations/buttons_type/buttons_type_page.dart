@@ -1,6 +1,8 @@
 import 'package:basics/app/core/logger/app_logger.dart';
+import 'package:basics/app/core/ui/styles/buttons_app.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
+import 'package:basics/app/core/ui/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -109,6 +111,17 @@ class ButtonsTypePage extends StatelessWidget {
                 onTap: () => log.info('Tap gesture'),
                 onVerticalDragStart: (coordenada) => log.info('gesture movimentado $coordenada'),
                 child: const Text('GestureDetecture'),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: ButtonWidget(
+                label: 'Bt personalizado', 
+                labelStyle: context.textsApp.textButtonLabel, 
+                onPressed: () {}, 
+                style: context.buttonsApp.primaryButton
               ),
             )
           ],

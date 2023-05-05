@@ -84,6 +84,18 @@ class HomePage extends StatelessWidget {
                 },
                 label: 'Dialogs'
               ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/showMsg');
+                },
+                label: 'showMsg'
+              ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/newForm');
+                },
+                label: 'Formulários'
+              ),
             ],
           ),
         ),

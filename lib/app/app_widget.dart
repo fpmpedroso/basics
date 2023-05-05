@@ -7,6 +7,7 @@ import 'package:basics/app/modules/presentations/how_navigate/how_navigate_modul
 import 'package:basics/app/modules/presentations/presentations_module.dart';
 import 'package:basics/app/modules/splash/splash_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/ui/theme/theme_app.dart';
 
 class AppWidget extends StatelessWidget {
@@ -17,6 +18,16 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Basics',
       theme: ThemeApp.theme,
+      //INÍCIO: suporte para região e língua do app (em conjunto com a declaração no yaml)
+        localizationsDelegates: const[
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const[
+          Locale('pt', 'BR'),
+        ],
+      //FIM: suporte para região e língua do app
       debugShowCheckedModeBanner: false,
       routes: {
         ...HomeModule().routers,

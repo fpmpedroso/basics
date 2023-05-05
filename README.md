@@ -67,3 +67,5 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - configura-se o logger;
 - configuração do novo módulo presentations;
 - criação do arquivo /app/modules/presentations/presentations_module.dart;
+- criação das presentations;
+- configuração do DataPicker em português;

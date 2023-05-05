@@ -5,10 +5,12 @@ import 'package:basics/app/modules/presentations/containers/containers_page.dart
 import 'package:basics/app/modules/presentations/dialogs/dialogs_page.dart';
 import 'package:basics/app/modules/presentations/example_list_view/example_list_view_page.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.dart';
+import 'package:basics/app/modules/presentations/new_form/new_form_page.dart';
 import 'package:basics/app/modules/presentations/new_image/new_image_page.dart';
 import 'package:basics/app/modules/presentations/new_project/new_project_page.dart';
 import 'package:basics/app/modules/presentations/rotations/rotations_page.dart';
 import 'package:basics/app/modules/presentations/run_server/run_server_page.dart';
+import 'package:basics/app/modules/presentations/show_messages/show_messages_page.dart';
 import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
 
 class PresentationsModule extends ProjetoModule {
@@ -25,6 +27,8 @@ class PresentationsModule extends ProjetoModule {
       '/exampleListView' : (context) => const ExampleListViewPage(),
       '/complexScreen' : (context) => const ComplexScreenPage(),
       '/dialogs' : (context) => const DialogsPage(),
+      '/showMsg' : (context) => const ShowMessagesPage(),
+      '/newForm' : (context) => const NewFormPage(),
     }
   );
 }

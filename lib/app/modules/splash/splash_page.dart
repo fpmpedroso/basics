@@ -1,5 +1,6 @@
 // página de entrada do sistema
 // contém uma extensão de mixin do loader ("with Loader")
+// contém uma extensão de mixin do package de msg ao usuário
 
 import 'package:basics/app/core/ui/helpers/loader.dart';
 import 'package:basics/app/core/ui/helpers/messages.dart';
