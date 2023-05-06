@@ -96,6 +96,12 @@ class HomePage extends StatelessWidget {
                 },
                 label: 'Formulários'
               ),
+              ButtonWidget.primary(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/complexForm');
+                },
+                label: 'Complex form'
+              ),
             ],
           ),
         ),
