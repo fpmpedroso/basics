@@ -15,6 +15,7 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - estrutura do loader: loading_animation_widget ^1.2.0+4;
 - estrutura do snackbar: top_snackbar_flutter ^3.0.0+1
 - personalização do log: logger ^1.3.0
+- validação de formulários: validatorless ^1.2.3
 
 
 ## tarefas
@@ -69,3 +70,4 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - criação do arquivo /app/modules/presentations/presentations_module.dart;
 - criação das presentations;
 - configuração do DataPicker em português;
+- configuração do Validatorless para validação de formulários
