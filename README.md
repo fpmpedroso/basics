@@ -70,4 +70,8 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - criação do arquivo /app/modules/presentations/presentations_module.dart;
 - criação das presentations;
 - configuração do DataPicker em português;
-- configuração do Validatorless para validação de formulários
+- configuração do Validatorless para validação de formulários;
+- criação do arquivo assets/json/cidades.json;
+- configuração do pubspec.yaml para leitura do asset/json;
+- criação do modelo /app/modules/read_from_json/models/cidades_model.dart;
+- 

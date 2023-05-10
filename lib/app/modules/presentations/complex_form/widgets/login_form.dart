@@ -14,6 +14,7 @@ class _LoginFormState extends State<LoginForm> with Messages<LoginForm> {
   //controladoras
   final _emailEC = TextEditingController();
   final _papsswordEC = TextEditingController();
+  final _confirmPasswordEC = TextEditingController();
 
   //descarte das controladoras
   @override
@@ -21,6 +22,7 @@ class _LoginFormState extends State<LoginForm> with Messages<LoginForm> {
     super.dispose();
     _emailEC.dispose();
     _papsswordEC.dispose();
+    _confirmPasswordEC.dispose();
   }
 
   @override
@@ -52,6 +54,17 @@ class _LoginFormState extends State<LoginForm> with Messages<LoginForm> {
           const SizedBox(
             height: 10,
           ),
+          TextFormFieldWidget(
+            controller: _confirmPasswordEC,
+            label: 'Confirmação de senha',
+            validator: Validatorless.multiple([
+              Validatorless.required('Confirmação obrigatória'),
+              Validatorless.compare(_papsswordEC, 'Confirmação diferente'),
+            ]),
+          ),
+          const SizedBox(
+            height: 18,
+          ),
           Padding(
             padding: const EdgeInsets.all(2.0),
             child: InkWell(
@@ -74,7 +87,8 @@ class _LoginFormState extends State<LoginForm> with Messages<LoginForm> {
                 final formValid = _formKey.currentState?.validate() ?? false;
 
                 if (formValid) {
-                  showSuccess('Form validado, chama-se a controller');
+                  showSuccess(
+                      '${_emailEC.text} validado, chama-se a controller');
                 }
               },
               style: context.buttonsApp.primaryButton,

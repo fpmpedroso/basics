@@ -1,0 +1,18 @@
+[
+    {
+        "cidade": "São Paulo",
+        "estado": "SP"
+    },
+    {
+        "cidade": "Belo Horizonte",
+        "estado": "MG"
+    },
+    {
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ"
+    },
+    {
+        "cidade": "Natal",
+        "estado": "RN"
+    }
+]

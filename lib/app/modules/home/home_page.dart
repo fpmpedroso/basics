@@ -14,95 +14,109 @@ class HomePage extends StatelessWidget {
         title: const Text('Home'),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(6),
-          child: Column(
-            children: [
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/newProject');
-                },
-                label: 'Criar projeto'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/runServer');
-                },
-                label: 'Rodar servidor'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/topMenu');
-                },
-                label: 'Top menu'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/containers');
-                },
-                label: 'Containers'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/newImage');
-                },
-                label: 'Imagens'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/howNavigate');
-                },
-                label: 'Navegação'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/rotations');
-                },
-                label: 'Rotação'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/buttonsType');
-                },
-                label: 'Tipos de botões'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/exampleListView');
-                },
-                label: 'List View'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/complexScreen');
-                },
-                label: 'Complex Screen'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/dialogs');
-                },
-                label: 'Dialogs'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/showMsg');
-                },
-                label: 'showMsg'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/newForm');
-                },
-                label: 'Formulários'
-              ),
-              ButtonWidget.primary(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/complexForm');
-                },
-                label: 'Complex form'
-              ),
-            ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(6),
+            child: Column(
+              children: [
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/newProject');
+                  },
+                  label: 'Criar projeto'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/runServer');
+                  },
+                  label: 'Rodar servidor'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/topMenu');
+                  },
+                  label: 'Top menu'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/containers');
+                  },
+                  label: 'Containers'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/newImage');
+                  },
+                  label: 'Imagens'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/howNavigate');
+                  },
+                  label: 'Navegação'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/rotations');
+                  },
+                  label: 'Rotação'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/buttonsType');
+                  },
+                  label: 'Tipos de botões'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/exampleListView');
+                  },
+                  label: 'List View'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/complexScreen');
+                  },
+                  label: 'Complex Screen'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/dialogs');
+                  },
+                  label: 'Dialogs'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/showMsg');
+                  },
+                  label: 'showMsg'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/newForm');
+                  },
+                  label: 'Formulários'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/complexForm');
+                  },
+                  label: 'Complex form'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/readFromJson');
+                  },
+                  label: 'Lendo Json'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/stacks');
+                  },
+                  label: 'Widget Stack'
+                ),
+              ],
+            ),
           ),
         ),
       ),

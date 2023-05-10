@@ -1,3 +1,9 @@
+// inicia-se a chave do formulário para ter acesso ao seu State;
+// validator: serve para validar os campos do formulário. Retornar um texto se contiver erro;
+// validator é acionado pela chave.currentState.validate() tendo true para correto;
+// controller: nada mais é do que armazenar os valores dos campos para poder usar;
+// ao final, deve-se descartar os valores armazenados na memória.''',
+
 import 'package:basics/app/core/ui/helpers/messages.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
@@ -54,6 +60,9 @@ class _NewFormPageState extends State<NewFormPage> with Messages<NewFormPage> {
                 '1) TextField: a maneira mais fácil e sem muitos recursos (não pode ser validado)',
                 style: context.textsApp.textRegular
                     .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              const SizedBox(
+                height: 50,
               ),
               Form(
                   child: Padding(
@@ -223,15 +232,17 @@ class _NewFormPageState extends State<NewFormPage> with Messages<NewFormPage> {
                       return null;
                     }
                   },*/
-                  onChanged: (String? newValue) {   //altera-se o valor selecionado
+                  onChanged: (String? newValue) {
+                    //altera-se o valor selecionado
                     if (newValue != null) {
                       setState(() {
                         valueSelected = newValue;
-                      });                      
+                      });
                     }
                   },
-                  elevation: 15,  //elevação da tela
-                  icon: const Icon(Icons.abc),  //troca o ícone da setinha do select
+                  elevation: 15, //elevação da tela
+                  icon: const Icon(
+                      Icons.abc), //troca o ícone da setinha do select
                   decoration: InputDecoration(
                     labelText: 'Selecione',
                     border: OutlineInputBorder(

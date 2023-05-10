@@ -9,10 +9,13 @@ import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.
 import 'package:basics/app/modules/presentations/new_form/new_form_page.dart';
 import 'package:basics/app/modules/presentations/new_image/new_image_page.dart';
 import 'package:basics/app/modules/presentations/new_project/new_project_page.dart';
+import 'package:basics/app/modules/presentations/read_from_json/read_from_json_page.dart';
 import 'package:basics/app/modules/presentations/rotations/rotations_page.dart';
 import 'package:basics/app/modules/presentations/run_server/run_server_page.dart';
 import 'package:basics/app/modules/presentations/show_messages/show_messages_page.dart';
 import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
+import 'package:basics/app/modules/presentations/widget_stacks/elaborated_stack_page.dart';
+import 'package:basics/app/modules/presentations/widget_stacks/widget_stacks_page.dart';
 
 class PresentationsModule extends ProjetoModule {
   PresentationsModule() : super(
@@ -31,6 +34,9 @@ class PresentationsModule extends ProjetoModule {
       '/showMsg' : (context) => const ShowMessagesPage(),
       '/newForm' : (context) => const NewFormPage(),
       '/complexForm' : (context) => const ComplexFormPage(),
+      '/readFromJson' : (context) => const ReadFromJsonPage(),
+      '/stacks' : (context) => const WidgetStacksPage(),
+      '/elaboratedStack' : (context) => const ElaboratedStackPage(),
     }
   );
 }
