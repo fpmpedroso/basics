@@ -115,6 +115,18 @@ class HomePage extends StatelessWidget {
                   },
                   label: 'Widget Stack'
                 ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/bottomNavigator');
+                  },
+                  label: 'BottomNavigatorBar'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/pageViewEx');
+                  },
+                  label: 'PageView'
+                ),
               ],
             ),
           ),

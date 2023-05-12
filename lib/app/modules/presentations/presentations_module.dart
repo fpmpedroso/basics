@@ -6,6 +6,8 @@ import 'package:basics/app/modules/presentations/containers/containers_page.dart
 import 'package:basics/app/modules/presentations/dialogs/dialogs_page.dart';
 import 'package:basics/app/modules/presentations/example_list_view/example_list_view_page.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.dart';
+import 'package:basics/app/modules/presentations/new_bottom_navigator_bar/new_bottom_navigator_bar_page.dart';
+import 'package:basics/app/modules/presentations/new_page_view/page_view_page.dart';
 import 'package:basics/app/modules/presentations/new_form/new_form_page.dart';
 import 'package:basics/app/modules/presentations/new_image/new_image_page.dart';
 import 'package:basics/app/modules/presentations/new_project/new_project_page.dart';
@@ -37,6 +39,8 @@ class PresentationsModule extends ProjetoModule {
       '/readFromJson' : (context) => const ReadFromJsonPage(),
       '/stacks' : (context) => const WidgetStacksPage(),
       '/elaboratedStack' : (context) => const ElaboratedStackPage(),
+      '/bottomNavigator' : (context) => const NewBottomNavigatorBarPage(),
+      '/pageViewEx' : (context) => const PageViewPage()
     }
   );
 }

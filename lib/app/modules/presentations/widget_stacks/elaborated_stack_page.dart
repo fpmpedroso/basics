@@ -46,6 +46,7 @@ class ElaboratedStackPage extends StatelessWidget {
                       '   Copenhague, a capital da Dinamarca, fica localizada nas ilhas costeiras de Zelândia e Amager. Ela se liga a Malmö, na parte sul da Suécia, pela Ponte do Øresund. O centro histórico da cidade, chamado de Indre By, contém Frederiksstaden, uma área rococó do século XVIII que abriga o Palácio de Amalienborg da família real.',
                       style: context.textsApp.textRegular,
                       textAlign: TextAlign.justify,
+                      //overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ],
