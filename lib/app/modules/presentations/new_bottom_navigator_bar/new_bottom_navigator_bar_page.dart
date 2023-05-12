@@ -1,4 +1,5 @@
 import 'package:basics/app/core/logger/app_logger.dart';
+import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/modules/presentations/new_bottom_navigator_bar/widgets/page2.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +36,10 @@ class _NewBottomNavigatorBarPageState extends State<NewBottomNavigatorBarPage> {
               initialIndex = index;
             });
           },
+          iconSize: 30,
+          backgroundColor: context.colors.lightOrange,
+          selectedItemColor: context.colors.whiteApp,
+          unselectedItemColor: context.colors.darkBlue,
           items: const [
             BottomNavigationBarItem(
                 label: 'Página 1', icon: Icon(Icons.airplane_ticket)),
