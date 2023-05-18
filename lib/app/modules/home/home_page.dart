@@ -1,3 +1,4 @@
+import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -126,6 +127,35 @@ class HomePage extends StatelessWidget {
                     Navigator.of(context).pushNamed('/pageViewEx');
                   },
                   label: 'PageView'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/elaboratedAvatar');
+                  },
+                  label: 'Avatar'
+                ),
+                Divider(
+                  thickness: 1,
+                  height: 50,
+                  color: context.colors.lightGrey,
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/gerenciaSetState');
+                  },
+                  label: 'SetState'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/gerenciaValueNotifier');
+                  },
+                  label: 'ValueNotifier'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/gerenciaChangeNotifier');
+                  },
+                  label: 'ChangeNotifier'
                 ),
               ],
             ),

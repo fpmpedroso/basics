@@ -102,6 +102,37 @@ class _ShowMessagesPageState extends State<ShowMessagesPage>
                     child: const Text('Success')),
               ],
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              '''4) MaterialBanner: igual a snackbar, porém na parte superior da tela.
+                Ele não some sozinho, precisa obrigatoriamente de uma ação''',
+              style: context.textsApp.textRegular
+                  .copyWith(fontSize: 14, color: context.colors.darkGrey),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  final materialBanner = MaterialBanner(
+                    content: const Text('Msg ao usuário'),
+                    backgroundColor: context.colors.lightOrange,
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            ScaffoldMessenger.of(context)
+                                .hideCurrentMaterialBanner();
+                          },
+                          child: const Text('Cancel'))
+                    ],
+                  );
+
+                  ScaffoldMessenger.of(context)
+                      .showMaterialBanner(materialBanner);
+                },
+                child: const Text('MaterialBanner'))
           ],
         ),
       ),
