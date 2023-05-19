@@ -3,6 +3,7 @@
 // cada rota foi configurada para que faça seu próprio carregamento de dependências
 
 import 'package:basics/app/modules/home/home_module.dart';
+import 'package:basics/app/modules/presentations/gerencia_provider/gerencia_provider_module.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_module.dart';
 import 'package:basics/app/modules/presentations/presentations_module.dart';
 import 'package:basics/app/modules/splash/splash_page.dart';
@@ -33,6 +34,7 @@ class AppWidget extends StatelessWidget {
         ...HomeModule().routers,
         ...PresentationsModule().routers,
         ...HowNavigateModule().routers,
+        ...GerenciaProviderModule().routers,
       },
       //home: const SplashPage(),
       home: const SplashPage()

@@ -7,6 +7,7 @@ import 'package:basics/app/modules/presentations/dialogs/dialogs_page.dart';
 import 'package:basics/app/modules/presentations/elaborated_avatar/elaborated_avatar_page.dart';
 import 'package:basics/app/modules/presentations/example_list_view/example_list_view_page.dart';
 import 'package:basics/app/modules/presentations/gerencia_change_notifier/gerencia_change_notifier_page.dart';
+import 'package:basics/app/modules/presentations/gerencia_provider/gerencia_provider_page.dart';
 import 'package:basics/app/modules/presentations/gerencia_set_state/gerencia_set_state_page.dart';
 import 'package:basics/app/modules/presentations/gerencia_value_notifier/gerencia_value_notifier_page.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.dart';
@@ -49,6 +50,8 @@ class PresentationsModule extends ProjetoModule {
       '/gerenciaSetState' : (context) => const GerenciaSetStatePage(),
       '/gerenciaValueNotifier' : (context) => const GerenciaValueNotifierPage(),
       '/gerenciaChangeNotifier' : (context) => const GerenciaChangeNotifierPage(),
+      //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
+      //a rota passou a estar em AppWidget, pois contém uma dependência específica
     }
   );
 }

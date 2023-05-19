@@ -157,6 +157,12 @@ class HomePage extends StatelessWidget {
                   },
                   label: 'ChangeNotifier'
                 ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/gerenciaProvider');
+                  },
+                  label: 'Provider'
+                ),
               ],
             ),
           ),
