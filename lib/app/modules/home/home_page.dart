@@ -28,6 +28,12 @@ class HomePage extends StatelessWidget {
                 ),
                 ButtonWidget.primary(
                   onPressed: () {
+                    Navigator.of(context).pushNamed('/launchScreen');
+                  },
+                  label: 'SplashScreen'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
                     Navigator.of(context).pushNamed('/runServer');
                   },
                   label: 'Rodar servidor'

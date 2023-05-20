@@ -11,6 +11,7 @@ import 'package:basics/app/modules/presentations/gerencia_provider/gerencia_prov
 import 'package:basics/app/modules/presentations/gerencia_set_state/gerencia_set_state_page.dart';
 import 'package:basics/app/modules/presentations/gerencia_value_notifier/gerencia_value_notifier_page.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.dart';
+import 'package:basics/app/modules/presentations/launch_sreen/launch_screen_page.dart';
 import 'package:basics/app/modules/presentations/new_bottom_navigator_bar/new_bottom_navigator_bar_page.dart';
 import 'package:basics/app/modules/presentations/new_page_view/page_view_page.dart';
 import 'package:basics/app/modules/presentations/new_form/new_form_page.dart';
@@ -28,6 +29,7 @@ class PresentationsModule extends ProjetoModule {
   PresentationsModule() : super(
     routers: {
       '/newProject' : (context) => const NewProjectPage(),
+      '/launchScreen' : (context) => const LaunchScreenPage(),
       '/runServer' : (context) => const RunServerPage(),
       '/topMenu' : (context) => const TopMenuPage(),
       '/containers' : (context) => const ContainersPage(),
