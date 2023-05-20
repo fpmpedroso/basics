@@ -16,6 +16,8 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - estrutura do snackbar: top_snackbar_flutter ^3.0.0+1
 - personalização do log: logger ^1.3.0
 - validação de formulários: validatorless ^1.2.3
+- alteração de splash screen: flutter_native_splash ^2.2.19
+- alteração de ícone do app: flutter_launcher_icons ^0.13.1
 
 
 ## tarefas
@@ -74,4 +76,7 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - criação do arquivo assets/json/cidades.json;
 - configuração do pubspec.yaml para leitura do asset/json;
 - criação do modelo /app/modules/read_from_json/models/cidades_model.dart;
-- 
+- configuração do nome do app android;
+- configuração da splash screen no pubspec.yaml (com script);
+- execução do script: flutter pub run flutter_native_splash:create;
+- configuração do ícone do arquivo no pubspec.yaml;
