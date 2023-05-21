@@ -2,6 +2,8 @@
 // contém uma extensão de mixin do loader ("with Loader")
 // contém uma extensão de mixin do package de msg ao usuário
 
+import 'dart:async';
+
 import 'package:basics/app/core/ui/helpers/loader.dart';
 import 'package:basics/app/core/ui/helpers/messages.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
@@ -17,16 +19,26 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage>
     with Loader<SplashPage>, Messages<SplashPage> {
+  
+  //função para aguardar 3s e levar o usuário para Home
+  void startTimer() {
+    Timer(const Duration(seconds: 3), () async {
+      Navigator.of(context).popAndPushNamed('/home');
+    });
+  }
+
   @override
   void initState() {
     super.initState();
 
-    //ao carregar a página aguarda 3s para ir para página principal
+    /*/ao carregar a página aguarda 3s para ir para página principal
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       //await Future.delayed(const Duration(seconds: 3));
       //Navigator.of(context).pushNamed('/home');
+      startTimer();
       Navigator.of(context).popAndPushNamed('/home');
-    });
+    });*/
+    startTimer();
   }
 
   @override
