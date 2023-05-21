@@ -61,49 +61,6 @@ class LaunchScreenPage extends StatelessWidget {
                 height: 20,
               ),
               const Divider(),
-               const SizedBox(
-                height: 20,
-              ),
-              Text(
-                '3) Alterar a Splash Screen:',
-                style: context.textsApp.textRegular
-                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                '''> baixar o package flutter_native_splash
-                  > criar em asset/images/ uma imagem 1024x1024 do ícone desejado
-                  > criar o seguinte script dentro do pubspec.yaml: ''',
-                style: context.textsApp.textRegular
-                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                '''flutter_native_splash:
-                      color: "#1E90FF"
-                      image: "assets/images/splash_screen.png"
-                      android: true
-                      ios: true''',
-                style: context.textsApp.textRegular
-                    .copyWith(fontSize: 14, color: context.colors.whiteApp, backgroundColor: Colors.black),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                '''> roda-se o comando flutter pub run flutter_native_splash:create''',
-                style: context.textsApp.textRegular
-                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-
-
               Text(
                 '1) Para Android:',
                 style: context.textsApp.textRegular
