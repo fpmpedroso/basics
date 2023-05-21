@@ -17,7 +17,7 @@ class LaunchScreenPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '# Como alterar ícone e splash screen?',
+                '# Como alterar nome, ícone e splash screen do App?',
                 style: context.textsApp.textBold
                     .copyWith(fontSize: 16, color: context.colors.darkBlue),
               ),
@@ -25,7 +25,7 @@ class LaunchScreenPage extends StatelessWidget {
                 height: 50,
               ),
               Text(
-                '1) Alterar o ícone para Android:',
+                '1) Alterar o nome do App para Android:',
                 style: context.textsApp.textRegular
                     .copyWith(fontSize: 14, color: context.colors.darkGrey),
               ),
@@ -42,7 +42,7 @@ class LaunchScreenPage extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                '2) Alterar o ícone para IOS:',
+                '2) Alterar o nome do App para IOS:',
                 style: context.textsApp.textRegular
                     .copyWith(fontSize: 14, color: context.colors.darkGrey),
               ),
@@ -61,8 +61,11 @@ class LaunchScreenPage extends StatelessWidget {
                 height: 20,
               ),
               const Divider(),
+              const SizedBox(
+                height: 20,
+              ),
               Text(
-                '1) Para Android:',
+                '3) Alterar a Splash Screen:',
                 style: context.textsApp.textRegular
                     .copyWith(fontSize: 14, color: context.colors.darkGrey),
               ),
@@ -70,8 +73,9 @@ class LaunchScreenPage extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                '''> abrir a pasta android/app/src/main/res/...
-                > poderá ser drawable ou drawable-v21, dependendo da versão que está sendo usada''',
+                '''> baixar o package flutter_native_splash
+                  > criar em asset/images/ uma imagem 1024x1024 do ícone desejado (preferência quadrada)
+                  > criar o seguinte script dentro do pubspec.yaml: ''',
                 style: context.textsApp.textRegular
                     .copyWith(fontSize: 14, color: context.colors.darkGrey),
               ),
@@ -79,23 +83,34 @@ class LaunchScreenPage extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                '> no arquivo .xml é possível trocar a cor de fundo',
+                '''flutter_native_splash:
+                      color: "#1E90FF"
+                      image: "assets/images/splash_screen.png"
+                      android: true
+                      ios: true
+                      
+                      android_12:
+                        image: "assets/images/splash_screen.png"''',
                 style: context.textsApp.textRegular
-                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
-              ),
-              Text(
-                '<item android:drawable="@android:color/white" />',
-                style: context.textsApp.textRegular.copyWith(
-                  fontSize: 14, 
-                  color: context.colors.whiteApp, 
-                  backgroundColor: Colors.black
-                ),
+                    .copyWith(fontSize: 14, color: context.colors.whiteApp, backgroundColor: Colors.black),
               ),
               const SizedBox(
                 height: 20,
               ),
               Text(
-                '> para trocar a imagem, basta colocá-la nas pastas drawable e drawable-v21',
+                '''> roda-se o comando flutter pub run flutter_native_splash:create''',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Divider(),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                '4) Alterar o ícone:',
                 style: context.textsApp.textRegular
                     .copyWith(fontSize: 14, color: context.colors.darkGrey),
               ),
@@ -103,7 +118,41 @@ class LaunchScreenPage extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                '> descomenta-se a inserção da imagem desejada e corrige o caminho/nome do arquivo sem extensão',
+                '''> baixar o package flutter_launcher_icons
+                  > criar em asset/images/ uma imagem do ícone desejado (1024x1024)
+                  > cria-se duas imagens, uma com fundo outra transparente (alternativa)
+                  > criar o seguinte script dentro do pubspec.yaml: ''',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                '''flutter_launcher_icons:
+                      android: "launcher_icon"
+                      ios: true
+                      remove_alpha_ios: true
+                      image_path: "assets/images/icon.png"  #normalmente ícone quadrado
+                      min_sdk_android: 21
+                      adaptive_icon_background: "#000000"
+                      adaptive_icon_foreground: "assets/images/icon.png"''',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.whiteApp, backgroundColor: Colors.black),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                '> em adaptive_icon_foreground coloca-se a img com fundo transparente (recortes)',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                '> roda-se o comando: flutter pub run flutter_launcher_icons',
                 style: context.textsApp.textRegular
                     .copyWith(fontSize: 14, color: context.colors.darkGrey),
               ),

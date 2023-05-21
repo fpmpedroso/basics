@@ -16,6 +16,8 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - estrutura do snackbar: top_snackbar_flutter ^3.0.0+1
 - personalização do log: logger ^1.3.0
 - validação de formulários: validatorless ^1.2.3
+- modificação do splash screen: flutter_native_splash ^2.2.19
+- modificação do ícone do App: flutter_launcher_icons ^0.13.1
 
 
 ## tarefas

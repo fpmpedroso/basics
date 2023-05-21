@@ -47,10 +47,23 @@ dependencies:
 
 # Script para alteração da Splash Screen
 flutter_native_splash:
-  color: "#1E90FF"
+  color: "#FFFFFF"
   image: "assets/images/splash_screen.png"
   android: true
   ios: true
+
+  android_12:
+    image: "assets/images/splash_screen.png"
+
+# Script para alteração do ícone
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/icon.png"  #normalmente ícone quadrado
+  min_sdk_android: 21
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: "assets/images/icon.png"  #caso exista algum ícone com transparência
 
 dev_dependencies:
   flutter_test:
