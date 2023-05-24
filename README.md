@@ -13,11 +13,13 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - fonte padrão: Lora;
 - fonte do logotipo: FiraCode;
 - estrutura do loader: loading_animation_widget ^1.2.0+4;
-- estrutura do snackbar: top_snackbar_flutter ^3.0.0+1
-- personalização do log: logger ^1.3.0
-- validação de formulários: validatorless ^1.2.3
-- modificação do splash screen: flutter_native_splash ^2.2.19
-- modificação do ícone do App: flutter_launcher_icons ^0.13.1
+- estrutura do snackbar: top_snackbar_flutter ^3.0.0+1;
+- personalização do log: logger ^1.3.0;
+- validação de formulários: validatorless ^1.2.3;
+- modificação do splash screen: flutter_native_splash ^2.2.19;
+- modificação do ícone do App: flutter_launcher_icons ^0.13.1;
+- driver de conexão com banco de dados sqlite: sqflite ^2.2.8+4;
+- recuperação da path do banco de dados em cada dispositivo: path ^1.8.3;
 
 
 ## tarefas
@@ -76,4 +78,8 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - criação do arquivo assets/json/cidades.json;
 - configuração do pubspec.yaml para leitura do asset/json;
 - criação do modelo /app/modules/read_from_json/models/cidades_model.dart;
+- configuração do nome do App;
+- configuração do ícone do App;
+- configuração da Splash Screen;
+- packages para usar o sqlite;
 - 

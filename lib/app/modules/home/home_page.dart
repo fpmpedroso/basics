@@ -169,6 +169,17 @@ class HomePage extends StatelessWidget {
                   },
                   label: 'Provider'
                 ),
+                Divider(
+                  thickness: 1,
+                  height: 50,
+                  color: context.colors.lightGrey,
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/dataBaseSqlite');
+                  },
+                  label: 'BD interno'
+                ),
               ],
             ),
           ),

@@ -3,6 +3,8 @@ import 'package:basics/app/modules/presentations/buttons_type/buttons_type_page.
 import 'package:basics/app/modules/presentations/complex_form/complex_form_page.dart';
 import 'package:basics/app/modules/presentations/complex_screen/complex_screen_page.dart';
 import 'package:basics/app/modules/presentations/containers/containers_page.dart';
+import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_controller.dart';
+import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_sqlite_page.dart';
 import 'package:basics/app/modules/presentations/dialogs/dialogs_page.dart';
 import 'package:basics/app/modules/presentations/elaborated_avatar/elaborated_avatar_page.dart';
 import 'package:basics/app/modules/presentations/example_list_view/example_list_view_page.dart';
@@ -23,6 +25,7 @@ import 'package:basics/app/modules/presentations/show_messages/show_messages_pag
 import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/elaborated_stack_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/widget_stacks_page.dart';
+import 'package:provider/provider.dart';
 
 class PresentationsModule extends ProjetoModule {
   PresentationsModule() : super(
@@ -53,6 +56,13 @@ class PresentationsModule extends ProjetoModule {
       '/gerenciaChangeNotifier' : (context) => const GerenciaChangeNotifierPage(),
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica
-    }
+      '/dataBaseSqlite' : (context) => const DataBaseSqlitePage(),
+    },
+    bindings: [
+      //outra forma de carregar as dependências específicas
+      ChangeNotifierProvider(
+        create: (_) => DataBaseController(),
+      )
+    ]
   );
 }
