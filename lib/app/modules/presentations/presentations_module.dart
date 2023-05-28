@@ -3,7 +3,7 @@ import 'package:basics/app/modules/presentations/buttons_type/buttons_type_page.
 import 'package:basics/app/modules/presentations/complex_form/complex_form_page.dart';
 import 'package:basics/app/modules/presentations/complex_screen/complex_screen_page.dart';
 import 'package:basics/app/modules/presentations/containers/containers_page.dart';
-import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_controller.dart';
+//import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_controller.dart';
 import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_sqlite_page.dart';
 import 'package:basics/app/modules/presentations/dialogs/dialogs_page.dart';
 import 'package:basics/app/modules/presentations/elaborated_avatar/elaborated_avatar_page.dart';
@@ -11,6 +11,7 @@ import 'package:basics/app/modules/presentations/example_list_view/example_list_
 import 'package:basics/app/modules/presentations/gerencia_change_notifier/gerencia_change_notifier_page.dart';
 import 'package:basics/app/modules/presentations/gerencia_set_state/gerencia_set_state_page.dart';
 import 'package:basics/app/modules/presentations/gerencia_value_notifier/gerencia_value_notifier_page.dart';
+import 'package:basics/app/modules/presentations/how_navigate/how_navigate_controller.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.dart';
 import 'package:basics/app/modules/presentations/launch_sreen/launch_screen_page.dart';
 import 'package:basics/app/modules/presentations/new_bottom_navigator_bar/new_bottom_navigator_bar_page.dart';
@@ -26,6 +27,7 @@ import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/elaborated_stack_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/widget_stacks_page.dart';
 import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 
 class PresentationsModule extends ProjetoModule {
   PresentationsModule() : super(
@@ -36,7 +38,7 @@ class PresentationsModule extends ProjetoModule {
       '/topMenu' : (context) => const TopMenuPage(),
       '/containers' : (context) => const ContainersPage(),
       '/newImage' : (context) => const NewImagePage(),
-      '/howNavigate' : (context) => const HowNavigatePage(),
+      '/howNavigate' : (context) => HowNavigatePage(controller: context.read()),
       '/rotations' : (context) => const RotationsPage(),
       '/buttonsType' : (context) => const ButtonsTypePage(),
       '/exampleListView' : (context) => const ExampleListViewPage(),
@@ -54,15 +56,22 @@ class PresentationsModule extends ProjetoModule {
       '/gerenciaSetState' : (context) => const GerenciaSetStatePage(),
       '/gerenciaValueNotifier' : (context) => const GerenciaValueNotifierPage(),
       '/gerenciaChangeNotifier' : (context) => const GerenciaChangeNotifierPage(),
+      
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica
+      
       '/dataBaseSqlite' : (context) => const DataBaseSqlitePage(),
     },
+    
+    //outra forma de carregar as dependências específicas
     bindings: [
-      //outra forma de carregar as dependências específicas
-      ChangeNotifierProvider(
+      /*ChangeNotifierProvider(
         create: (_) => DataBaseController(),
-      )
+      )*/
+      ChangeNotifierProvider(
+        create: (context) => HowNavigateController(),
+      ),
     ]
+    
   );
 }
