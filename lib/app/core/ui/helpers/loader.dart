@@ -1,5 +1,5 @@
 //contém o simbolo que indica carregamento da página
-// a extensão do mixin vai no SplashPage ("with Loader")
+// por ser um mixin vai após o extends com a palavra reservada ("with Loader")
 
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';

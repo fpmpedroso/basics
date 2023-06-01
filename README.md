@@ -20,6 +20,7 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - modificação do ícone do App: flutter_launcher_icons ^0.13.1;
 - driver de conexão com banco de dados sqlite: sqflite ^2.2.8+4;
 - recuperação da path do banco de dados em cada dispositivo: path ^1.8.3;
+- formatação de datas: intl ^0.17.0;
 
 
 ## tarefas

@@ -48,6 +48,7 @@ class _AppWidgetState extends State<AppWidget> {
     return MaterialApp(
         title: 'Basics',
         theme: ThemeApp.theme,
+        
         //INÍCIO: suporte para região e língua do app (em conjunto com a declaração no yaml)
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
@@ -58,6 +59,7 @@ class _AppWidgetState extends State<AppWidget> {
           Locale('pt', 'BR'),
         ],
         //FIM: suporte para região e língua do app
+        
         debugShowCheckedModeBanner: false,
         routes: {
           ...HomeModule().routers,

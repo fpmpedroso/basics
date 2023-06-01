@@ -65,24 +65,25 @@ class _NewFormPageState extends State<NewFormPage> with Messages<NewFormPage> {
                 height: 50,
               ),
               Form(
-                  child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  children: [
-                    TextField(
-                      onChanged: (String value) {
-                        setState(() {
-                          txtExample1 = value;
-                        });
-                      },
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text('Texto digitado: $txtExample1'),
-                  ],
-                ),
-              )),
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Column(
+                    children: [
+                      TextField(
+                        onChanged: (String value) {
+                          setState(() {
+                            txtExample1 = value;
+                          });
+                        },
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text('Texto digitado: $txtExample1'),
+                    ],
+                  ),
+                )
+              ),
               const SizedBox(
                 height: 20,
               ),
