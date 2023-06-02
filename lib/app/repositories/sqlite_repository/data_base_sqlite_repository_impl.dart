@@ -19,7 +19,6 @@ class DataBaseSqliteRepositoryImpl implements DataBaseSqliteRepository {
 
   @override
   Future<void> save(DateTime date, String description) async {
-    
     try {
       //abre-se uma conexão
       final conn = await _sqliteConnectionFactory.openConnection();
@@ -30,7 +29,6 @@ class DataBaseSqliteRepositoryImpl implements DataBaseSqliteRepository {
         'data_hora': date.toIso8601String(), //passa a data para String
         'desricao': description
       });
-
     } catch (e, s) {
       _log.error('erro na inserção dos dados', e, s);
 

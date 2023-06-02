@@ -180,6 +180,12 @@ class HomePage extends StatelessWidget {
                   },
                   label: 'BD interno'
                 ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/dataSqlitePage');
+                  },
+                  label: 'Teste BD'
+                ),
               ],
             ),
           ),

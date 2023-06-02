@@ -2,26 +2,24 @@ import 'package:basics/app/core/ui/helpers/loader.dart';
 import 'package:basics/app/core/ui/helpers/messages.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
-import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_sqlite_controller.dart';
+import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'widgets/calendar_button.dart';
 
-class DataBaseSqlitePage extends StatefulWidget {
-  //armaze-na uma instância da controller
-  final DataBaseSqliteController _controller;
+class DataSqlitePage extends StatefulWidget {
+  //armazena-se uma instância da controller
+  final DataSqliteController _controller;
 
-  const DataBaseSqlitePage(
-      {Key? key, required DataBaseSqliteController controller})
+  const DataSqlitePage({Key? key, required DataSqliteController controller})
       : _controller = controller,
         super(key: key);
 
   @override
-  State<DataBaseSqlitePage> createState() => _DataBaseSqlitePageState();
+  State<DataSqlitePage> createState() => _DataSqlitePageState();
 }
 
-class _DataBaseSqlitePageState extends State<DataBaseSqlitePage>
-    with Messages<DataBaseSqlitePage>, Loader<DataBaseSqlitePage> {
+class _DataSqlitePageState extends State<DataSqlitePage>
+    with Messages<DataSqlitePage>, Loader<DataSqlitePage> {
   //chave do formulário
   final _formKey = GlobalKey<FormState>();
 
@@ -32,7 +30,16 @@ class _DataBaseSqlitePageState extends State<DataBaseSqlitePage>
   void initState() {
     super.initState();
 
-    //context.watch<DataBaseSqliteController>().loaderIsOpen;
+    //adicionando um listener na página para alterações de variável na controller
+    context.read<DataSqliteController>().addListener(() {
+      var loader = context.read<DataSqliteController>().loaderIsOpen;
+
+      if (loader) {
+        showLoader();
+      } else {
+        hideLoader();
+      }
+    });
   }
 
   @override
@@ -46,7 +53,7 @@ class _DataBaseSqlitePageState extends State<DataBaseSqlitePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Banco de Dados Interno'),
+        title: const Text('Database'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -168,7 +175,7 @@ class _DataBaseSqlitePageState extends State<DataBaseSqlitePage>
                   padding: const EdgeInsets.all(8),
                   child: Column(
                     children: [
-                      CalendarButton(),
+                      //CalendarButton(),
                       const SizedBox(
                         height: 20,
                       ),
@@ -197,7 +204,7 @@ class _DataBaseSqlitePageState extends State<DataBaseSqlitePage>
 
                           if (formValid) {
                             //widget para chamar as variáveis iniciadas
-                            widget._controller.save(_formDescriptionEC.text);
+                            //widget._controller.save(_formDescriptionEC.text);
 
                             showSuccess('Sucesso!');
                           } else {
@@ -211,9 +218,7 @@ class _DataBaseSqlitePageState extends State<DataBaseSqlitePage>
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          //if (isOpen) {
-                            //showLoader();
-                          //}
+                          context.read<DataSqliteController>().save();
                         },
                         child: const Text('teste loader'),
                       ),

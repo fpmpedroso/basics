@@ -71,6 +71,8 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - cria-se o arquivo /app/core/ui/helpers/messages.dart;
 - insere-se o mixin na splash_page.dart ("with...");
 - configura-se o logger;
+- configura-se o utilitário de uso de msg e loader, app/core/ui
+- 
 - configuração do novo módulo presentations;
 - criação do arquivo /app/modules/presentations/presentations_module.dart;
 - criação das presentations;

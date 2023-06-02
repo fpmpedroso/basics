@@ -1,13 +1,9 @@
-import 'package:basics/app/core/logger/app_logger.dart';
 import 'package:basics/app/core/modules/projeto_module.dart';
-import 'package:basics/app/core/ui/helpers/loader.dart';
 import 'package:basics/app/modules/presentations/buttons_type/buttons_type_page.dart';
 import 'package:basics/app/modules/presentations/complex_form/complex_form_page.dart';
 import 'package:basics/app/modules/presentations/complex_screen/complex_screen_page.dart';
 import 'package:basics/app/modules/presentations/containers/containers_page.dart';
-import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_sqlite_controller.dart';
 //import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_controller.dart';
-import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_sqlite_page.dart';
 import 'package:basics/app/modules/presentations/dialogs/dialogs_page.dart';
 import 'package:basics/app/modules/presentations/elaborated_avatar/elaborated_avatar_page.dart';
 import 'package:basics/app/modules/presentations/example_list_view/example_list_view_page.dart';
@@ -29,13 +25,7 @@ import 'package:basics/app/modules/presentations/show_messages/show_messages_pag
 import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/elaborated_stack_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/widget_stacks_page.dart';
-import 'package:basics/app/repositories/sqlite_repository/data_base_sqlite_repository.dart';
-import 'package:basics/app/repositories/sqlite_repository/data_base_sqlite_repository_impl.dart';
-import 'package:basics/app/services/sqlite_service/database_sqlite_service.dart';
-import 'package:basics/app/services/sqlite_service/database_sqlite_service_impl.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
-//import 'package:provider/provider.dart';
 
 class PresentationsModule extends ProjetoModule {
   PresentationsModule() : super(
@@ -68,7 +58,7 @@ class PresentationsModule extends ProjetoModule {
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica
       
-      '/dataBaseSqlite' : (context) => DataBaseSqlitePage(controller: context.read(),),
+      //'/dataBaseSqlite' : (context) => DataBaseSqlitePage(controller: context.read()),
     },
     
     //outra forma de carregar as dependências específicas
@@ -79,23 +69,6 @@ class PresentationsModule extends ProjetoModule {
       //binding da navegação
       ChangeNotifierProvider(
         create: (context) => HowNavigateController(),
-      ),
-
-      //bindings do database
-      //repository: recebe uma classe de conexão e uma classe do AppLogger, que já estão sendo providas pela AppModule
-      Provider<DataBaseSqliteRepository>(
-        create: (context) => DataBaseSqliteRepositoryImpl(
-          sqliteConnectionFactory: context.read(),
-          log: context.read()
-        )
-      ),
-      //service: recebe a classe Repository
-      Provider<DatabaseSqliteService>(
-        create: (context) => DatabaseSqliteServiceImpl(dataBaseSqliteRepository: context.read()),
-      ),
-      //controller: do tipo ChangeNotifierProvider devido cuidar das mudanças de estado
-      ChangeNotifierProvider(
-        create: (context) => DataBaseSqliteController(databaseSqliteService: context.read()),
       ),
     ]
     
