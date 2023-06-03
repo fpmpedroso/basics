@@ -1,12 +1,13 @@
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
-import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_sqlite_controller.dart';
+import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-class CalendarButton extends StatelessWidget {
-  CalendarButton({Key? key}) : super(key: key);
+class CalendarWidget extends StatelessWidget {
+
+  CalendarWidget({ Key? key }) : super(key: key);
 
   //importa-se o pacote Intl para formatar a data
   final dateFormat = DateFormat('dd/MM/y');
@@ -25,7 +26,7 @@ class CalendarButton extends StatelessWidget {
             lastDate: lastDate);
 
         //aciona-se o método set da controller para inserir a data que a pessoa escolheu
-        context.read<DataBaseSqliteController>().selectedDate = selectedDate;
+        context.read<DataSqliteController>().selectedDate = selectedDate;
       },
       borderRadius: BorderRadius.circular(30),
       child: Container(
@@ -46,7 +47,7 @@ class CalendarButton extends StatelessWidget {
               height: 10,
             ),
             //envolve-se com uma Selector para realizar alterações de estado
-            Selector<DataBaseSqliteController, DateTime?>(
+            Selector<DataSqliteController, DateTime?>(
               selector: (context, controller) => controller.selectedDate,
               builder: (context, selectedDate, child) {
                 //formata-se a data

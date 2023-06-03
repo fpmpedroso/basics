@@ -13,6 +13,8 @@ import 'package:basics/app/modules/presentations/gerencia_value_notifier/gerenci
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_controller.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.dart';
 import 'package:basics/app/modules/presentations/launch_sreen/launch_screen_page.dart';
+import 'package:basics/app/modules/presentations/listener_loader/listener_loader_controller.dart';
+import 'package:basics/app/modules/presentations/listener_loader/listener_loader_page.dart';
 import 'package:basics/app/modules/presentations/new_bottom_navigator_bar/new_bottom_navigator_bar_page.dart';
 import 'package:basics/app/modules/presentations/new_page_view/page_view_page.dart';
 import 'package:basics/app/modules/presentations/new_form/new_form_page.dart';
@@ -25,6 +27,7 @@ import 'package:basics/app/modules/presentations/show_messages/show_messages_pag
 import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/elaborated_stack_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/widget_stacks_page.dart';
+import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 class PresentationsModule extends ProjetoModule {
@@ -54,6 +57,7 @@ class PresentationsModule extends ProjetoModule {
       '/gerenciaSetState' : (context) => const GerenciaSetStatePage(),
       '/gerenciaValueNotifier' : (context) => const GerenciaValueNotifierPage(),
       '/gerenciaChangeNotifier' : (context) => const GerenciaChangeNotifierPage(),
+      '/listenerLoader': (context) => ListenerLoaderPage(controller: context.read(),),
       
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica
@@ -66,9 +70,15 @@ class PresentationsModule extends ProjetoModule {
       /*ChangeNotifierProvider(
         create: (_) => DataBaseController(),
       )*/
+
       //binding da navegação
       ChangeNotifierProvider(
         create: (context) => HowNavigateController(),
+      ),
+
+      //binding do ListenerLoader
+      ChangeNotifierProvider(
+        create: (context) => ListenerLoaderController()
       ),
     ]
     

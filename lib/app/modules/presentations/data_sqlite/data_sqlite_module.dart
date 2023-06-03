@@ -12,7 +12,7 @@ class DataSqliteModule extends ProjetoModule {
     : super(
       bindings: [
         Provider<DataSqliteRepository>(
-          create: (context) => DataSqliteRepositoryImpl(),
+          create: (context) => DataSqliteRepositoryImpl(sqliteConnectionFactory: context.read(), log: context.read()),
         ),
         Provider<DataSqliteService>(
           create: (context) => DataSqliteServiceImpl(dataSqliteRepository: context.read())

@@ -3,6 +3,7 @@ import 'package:basics/app/core/ui/helpers/messages.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_controller.dart';
+import 'package:basics/app/modules/presentations/data_sqlite/widget/calendar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -175,7 +176,7 @@ class _DataSqlitePageState extends State<DataSqlitePage>
                   padding: const EdgeInsets.all(8),
                   child: Column(
                     children: [
-                      //CalendarButton(),
+                      CalendarWidget(),
                       const SizedBox(
                         height: 20,
                       ),

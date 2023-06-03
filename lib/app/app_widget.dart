@@ -7,7 +7,6 @@
 
 import 'package:basics/app/core/database/sqlite_adm_connection.dart';
 import 'package:basics/app/modules/home/home_module.dart';
-import 'package:basics/app/modules/presentations/data_base_sqlite/data_base_sqlite_module.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_module.dart';
 import 'package:basics/app/modules/presentations/gerencia_provider/gerencia_provider_module.dart';
 import 'package:basics/app/modules/presentations/how_navigate/how_navigate_module.dart';
@@ -68,7 +67,6 @@ class _AppWidgetState extends State<AppWidget> {
           ...PresentationsModule().routers,
           ...HowNavigateModule().routers,
           ...GerenciaProviderModule().routers,
-          ...DataBaseSqliteModule().routers,
           ...DataSqliteModule().routers,
         },
         //home: const SplashPage(),

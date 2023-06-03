@@ -176,15 +176,15 @@ class HomePage extends StatelessWidget {
                 ),
                 ButtonWidget.primary(
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/dataBaseSqlite');
+                    Navigator.of(context).pushNamed('/listenerLoader');
                   },
-                  label: 'BD interno'
+                  label: 'Loader'
                 ),
                 ButtonWidget.primary(
                   onPressed: () {
                     Navigator.of(context).pushNamed('/dataSqlitePage');
                   },
-                  label: 'Teste BD'
+                  label: 'BD interno'
                 ),
               ],
             ),
