@@ -26,6 +26,9 @@ class _NewFormPageState extends State<NewFormPage> with Messages<NewFormPage> {
   //controladora que serve para resgatar valores
   final _formEC = TextEditingController();
 
+  //acionamento do focus em local determinado
+  final _focusCampo3 = FocusNode();
+
   //armazenamento do valor do select(DropdownButtonFormField), ex. 8
   String valueSelected = 'cat01';
 
@@ -65,25 +68,24 @@ class _NewFormPageState extends State<NewFormPage> with Messages<NewFormPage> {
                 height: 50,
               ),
               Form(
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    children: [
-                      TextField(
-                        onChanged: (String value) {
-                          setState(() {
-                            txtExample1 = value;
-                          });
-                        },
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text('Texto digitado: $txtExample1'),
-                    ],
-                  ),
-                )
-              ),
+                  child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Column(
+                  children: [
+                    TextField(
+                      onChanged: (String value) {
+                        setState(() {
+                          txtExample1 = value;
+                        });
+                      },
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text('Texto digitado: $txtExample1'),
+                  ],
+                ),
+              )),
               const SizedBox(
                 height: 20,
               ),
@@ -114,7 +116,7 @@ class _NewFormPageState extends State<NewFormPage> with Messages<NewFormPage> {
                         height: 20,
                       ),
                       Text(
-                        '4) TextFormField com controlador para resgatar os valores',
+                        '4) TextFormField com controlador para resgatar os valores... #CAMPO 3',
                         style: context.textsApp.textRegular.copyWith(
                             fontSize: 14, color: context.colors.darkGrey),
                       ),
@@ -122,6 +124,8 @@ class _NewFormPageState extends State<NewFormPage> with Messages<NewFormPage> {
                         padding: const EdgeInsets.all(8),
                         child: Column(children: [
                           TextFormField(
+                            //para setar onde será o focus quando requisitado por alguma ação
+                            focusNode: _focusCampo3,
                             controller:
                                 _formEC, //controladora que resgata o conteúdo
                             validator: (String? value) {
@@ -143,6 +147,9 @@ class _NewFormPageState extends State<NewFormPage> with Messages<NewFormPage> {
                                 } else {
                                   showError('Form inválido :(');
                                 }
+
+                                // FOCUS NODE => veja o que acontece com o 3º campo do formulário
+                                _focusCampo3.requestFocus();
                               },
                               child: const Text('Salvar')),
                         ]),
