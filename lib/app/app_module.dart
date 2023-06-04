@@ -5,6 +5,7 @@ import 'package:basics/app/app_widget.dart';
 import 'package:basics/app/core/database/sqlite_connection_factory.dart';
 import 'package:basics/app/core/logger/app_logger.dart';
 import 'package:basics/app/core/logger/app_logger_impl.dart';
+import 'package:basics/app/core/ui/helpers/messages_no_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +21,11 @@ class AppModule extends StatelessWidget {
         //Provide do Log
         Provider<AppLogger>(
           create: (_) => AppLoggerImpl()
+        ),
+
+        //Provide das msg sem Mixin
+        Provider(
+          create: (_) => MessagesNoMixin(),
         ),
         
         //Provide da conexão com o Banco de Dados

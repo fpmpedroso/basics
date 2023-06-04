@@ -1,3 +1,6 @@
+//sistema de mensagens utilizadno Mixins
+//para carregar, basta ir na Page, após o extends State<nome_da_classe> e inserir with Messages<nome_da_classe>{}
+
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:flutter/material.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';

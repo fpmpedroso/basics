@@ -27,7 +27,6 @@ import 'package:basics/app/modules/presentations/show_messages/show_messages_pag
 import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/elaborated_stack_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/widget_stacks_page.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 class PresentationsModule extends ProjetoModule {

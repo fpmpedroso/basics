@@ -1,5 +1,7 @@
+import 'package:basics/app/core/notifier/default_listener_notifier.dart';
 import 'package:basics/app/core/ui/helpers/loader.dart';
 import 'package:basics/app/core/ui/helpers/messages.dart';
+import 'package:basics/app/core/ui/helpers/messages_no_mixin.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_controller.dart';
@@ -31,6 +33,7 @@ class _DataSqlitePageState extends State<DataSqlitePage>
   void initState() {
     super.initState();
 
+    /*INÍCIO: listener para o loader => FOI TROCADO PELA LÓGICA DE SISTEMATIZAR LOAD E MSG
     //adicionando um listener na página para alterações de variável na controller
     context.read<DataSqliteController>().addListener(() {
       var loader = context.read<DataSqliteController>().loaderIsOpen;
@@ -41,6 +44,33 @@ class _DataSqlitePageState extends State<DataSqlitePage>
         hideLoader();
       }
     });
+    //FIM: listener para o loader */
+
+    //INÍCIO: utilização do controle de notificação de loader e msg
+
+    //informa que o changeNotifier está dentro da controller através do provider
+    var defaultListener = DefaultListenerNotifier(
+      changeNotifier: context.read<DataSqliteController>(),
+      messagesNoMixin: context.read<MessagesNoMixin>(),
+    );
+
+    //invoca-se o método listener e passa o context do BuildContext como parâmetro
+    //a função anônima successVoidCallBack deve ser passada no caso de sucesso
+    defaultListener.listener(
+      context: context,
+      successCallBack: (notifier, listenerInstance) {
+        //deve-se descarregar o listener (chama listenerIsntance por conter uma instância de changeNotifier, local que está o método dispose)
+        listenerInstance.dispose();
+
+        //pode-se fazer uma navegação por exemplo
+        //Navigator.of(context).pop();
+      },
+      errorCallBack: (notifier, listenerInstance) {
+        //implementação não obrigatória para msg de erro
+      }
+    );
+
+    //FIM: utilização do controle de notificação de loader e msg
   }
 
   @override
@@ -205,23 +235,13 @@ class _DataSqlitePageState extends State<DataSqlitePage>
 
                           if (formValid) {
                             //widget para chamar as variáveis iniciadas
-                            //widget._controller.save(_formDescriptionEC.text);
-
-                            showSuccess('Sucesso!');
-                          } else {
-                            showError('Erro');
+                            widget._controller.save(_formDescriptionEC.text);
                           }
                         },
                         child: const Text('Salvar'),
                       ),
                       const SizedBox(
                         height: 20,
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          context.read<DataSqliteController>().save();
-                        },
-                        child: const Text('teste loader'),
                       ),
                     ],
                   ),

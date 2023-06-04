@@ -12,8 +12,9 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - provider: ^6.0.5;
 - fonte padrão: Lora;
 - fonte do logotipo: FiraCode;
-- estrutura do loader: loading_animation_widget ^1.2.0+4;
-- estrutura do snackbar: top_snackbar_flutter ^3.0.0+1;
+- estrutura do loader: loading_animation_widget ^1.2.0+4 (COM MIXIN)
+- estrutura de loader: flutter_overlay_loader ^2.0.0 (SEM MIXIN);
+- estrutura do snackbar: top_snackbar_flutter ^3.0.0+1 (COM MIXIN);
 - personalização do log: logger ^1.3.0;
 - validação de formulários: validatorless ^1.2.3;
 - modificação do splash screen: flutter_native_splash ^2.2.19;
@@ -71,12 +72,12 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - cria-se o arquivo /app/core/ui/helpers/messages.dart;
 - insere-se o mixin na splash_page.dart ("with...");
 - configura-se o logger;
-- configura-se o utilitário de uso de msg e loader, app/core/ui
-- 
+- configura-se o utilitário de uso de msg e loader, app/core/notifier/default_change_notifier.dart;
+- cria-se a controladora do utilitário de msg e loader, app/core/notifier/default_listener_notifer.dart;
 - configuração do novo módulo presentations;
 - criação do arquivo /app/modules/presentations/presentations_module.dart;
 - criação das presentations;
-- configuração do DataPicker em português;
+- configuração do DataPicker em português (#língua, #locale, #localização), explicação em "Dialogs";
 - configuração do Validatorless para validação de formulários;
 - criação do arquivo assets/json/cidades.json;
 - configuração do pubspec.yaml para leitura do asset/json;

@@ -18,7 +18,7 @@ class DataSqliteModule extends ProjetoModule {
           create: (context) => DataSqliteServiceImpl(dataSqliteRepository: context.read())
         ),
         ChangeNotifierProvider(
-          create: (context) => DataSqliteController(dataSqliteService: context.read()),
+          create: (context) => DataSqliteController(dataSqliteService: context.read(), log: context.read()),
         )
       ], 
       routers: {

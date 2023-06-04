@@ -6,11 +6,11 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class CalendarWidget extends StatelessWidget {
-
-  CalendarWidget({ Key? key }) : super(key: key);
-
+  
   //importa-se o pacote Intl para formatar a data
   final dateFormat = DateFormat('dd/MM/y');
+
+  CalendarWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,8 @@ class CalendarWidget extends StatelessWidget {
             firstDate: DateTime(2020),
             lastDate: lastDate);
 
-        //aciona-se o método set da controller para inserir a data que a pessoa escolheu
+        //aciona-se o método set da controller para inserir a data que a pessoa escolheu e logo em seguida os ouvintes são acionados
+        // ignore: use_build_context_synchronously
         context.read<DataSqliteController>().selectedDate = selectedDate;
       },
       borderRadius: BorderRadius.circular(30),
@@ -48,8 +49,8 @@ class CalendarWidget extends StatelessWidget {
             ),
             //envolve-se com uma Selector para realizar alterações de estado
             Selector<DataSqliteController, DateTime?>(
-              selector: (context, controller) => controller.selectedDate,
-              builder: (context, selectedDate, child) {
+              selector: (_, controller) => controller.selectedDate,
+              builder: (_, selectedDate, __) {
                 //formata-se a data
                 if (selectedDate != null) {
                   return Text(
