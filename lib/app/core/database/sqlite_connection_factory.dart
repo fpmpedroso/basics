@@ -51,18 +51,17 @@ class SqliteConnectionFactory {
     //todo o processo possa acontecer de novo, sempre um por vez
     if (_db == null) {
       await _lock.synchronized(() async {
-        //verifica se a instância do Banco é nula, caso contrário não permite que seja aberta a conexão
-        if (_instance == null) {
-          //abre-se a conexão informando o caminho, a versão que está sendo usada, e os métodos de abertura
-          _db = await openDatabase(databaseFinalPath,
-              version: _version,
-              onConfigure: _onConfigure,
-              onCreate: _onCreate,
-              onUpgrade: _onUpgrade,
-              onDowngrade: _onDowngrade);
-        }
+        _db ??= await openDatabase(
+          databaseFinalPath,
+          version: _version,
+          onConfigure: _onConfigure,
+          onCreate: _onCreate,
+          onUpgrade: _onUpgrade,
+          onDowngrade: _onDowngrade,
+        );
       });
     }
+
 
     //retorna-se a instância de _db, forçando-a como não nula, pois sempre haverá um resultado por ter sido criada sua instância no chamamento do método
     return _db!;

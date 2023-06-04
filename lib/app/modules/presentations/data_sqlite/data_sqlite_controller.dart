@@ -12,6 +12,9 @@ class DataSqliteController extends DefaultChangeNotifier {
   //recebe uma instância de Logger
   final AppLogger _log;
 
+  //msg de sucesso
+  String? msgSucesso;
+
   //armazena-se a data selecionada
   DateTime? _selectedDate;
 
@@ -20,6 +23,9 @@ class DataSqliteController extends DefaultChangeNotifier {
       {required DataSqliteService dataSqliteService, required AppLogger log})
       : _dataSqliteService = dataSqliteService,
         _log = log;
+
+  //sabe que existe uma msg de sucesso quando requisitada
+  bool get hasInfo => msgSucesso != null;
 
   //insere o valor da data que o usuário selecionou
   //dentro do CalendarButton, no método onTap(), aciona-se esse método
@@ -36,24 +42,39 @@ class DataSqliteController extends DefaultChangeNotifier {
 
   //faz o processo de salvamento dos dados no database
   void save(String description) async {
+    /*
     showLoadingAndResetState();
+
+    //reseta qualquer tipo de msg
+    msgSucesso = null;
     notifyListeners();
 
     await Future.delayed(const Duration(seconds: 2));
 
     hideLoading();
-    setError('erro');
-    notifyListeners();
+    success();
 
-    /*
+    //cria a msg de sucesso
+    msgSucesso = 'Sucesso :)';
+    notifyListeners();
+    */
+
+    
     try {
       showLoadingAndResetState();
+      
+      //reseta qualquer tipo de msg
+      msgSucesso = null;
+      
       notifyListeners();
 
       //certifica-se que o usuário setou a data
       if (_selectedDate != null) {
         await _dataSqliteService.save(_selectedDate!, description);
 
+        //transfere a msg de sucesso
+        msgSucesso = 'Dados cadastrados :)';
+        
         //aciona o método para sucesso
         success();
       } else {
@@ -67,6 +88,6 @@ class DataSqliteController extends DefaultChangeNotifier {
       hideLoading();
       notifyListeners();
     }
-    */
+    
   }
 }

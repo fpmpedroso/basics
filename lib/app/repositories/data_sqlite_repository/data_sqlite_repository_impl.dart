@@ -26,7 +26,7 @@ class DataSqliteRepositoryImpl implements DataSqliteRepository {
       await conn.insert('tabela_01', {
         'id': null,
         'data_hora': date.toIso8601String(), //passa a data para String
-        'desricao': description
+        'descricao': description
       });
     } catch (e, s) {
       _log.error('erro na inserção dos dados', e, s);

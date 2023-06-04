@@ -22,7 +22,7 @@ class DataSqlitePage extends StatefulWidget {
 }
 
 class _DataSqlitePageState extends State<DataSqlitePage>
-    with Messages<DataSqlitePage>, Loader<DataSqlitePage> {
+    with Messages<DataSqlitePage> {
   //chave do formulário
   final _formKey = GlobalKey<FormState>();
 
@@ -57,18 +57,30 @@ class _DataSqlitePageState extends State<DataSqlitePage>
     //invoca-se o método listener e passa o context do BuildContext como parâmetro
     //a função anônima successVoidCallBack deve ser passada no caso de sucesso
     defaultListener.listener(
-      context: context,
-      successCallBack: (notifier, listenerInstance) {
-        //deve-se descarregar o listener (chama listenerIsntance por conter uma instância de changeNotifier, local que está o método dispose)
-        listenerInstance.dispose();
+        context: context,
+        everyCallBack: (notifier, listenerInstance) {
+          //verifica se existe transmissão de alguma mensagem da controle e exibe
 
-        //pode-se fazer uma navegação por exemplo
-        //Navigator.of(context).pop();
-      },
-      errorCallBack: (notifier, listenerInstance) {
-        //implementação não obrigatória para msg de erro
-      }
-    );
+          //no caso foi feita uma auto-promoção do notifier que era de DefaultListenerNotifier para DataSqliteController
+          //isso para poder obter o atributo hasInfo da Controller
+          if (notifier is DataSqliteController) {
+            if (notifier.hasInfo) {
+              //pode usar com mixin mesmo
+              //pode forçar pq foi verificado dentro da controlelr
+              showSuccess(notifier.msgSucesso!);
+            }
+          }
+        },
+        successCallBack: (notifier, listenerInstance) {
+          //deve-se descarregar o listener (chama listenerIsntance por conter uma instância de changeNotifier, local que está o método dispose)
+          listenerInstance.dispose();
+
+          //pode-se fazer uma navegação por exemplo
+          //Navigator.of(context).pop();
+        },
+        errorCallBack: (notifier, listenerInstance) {
+          //implementação não obrigatória para msg de erro
+        });
 
     //FIM: utilização do controle de notificação de loader e msg
   }

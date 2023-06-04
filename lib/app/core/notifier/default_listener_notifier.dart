@@ -24,15 +24,18 @@ class DefaultListenerNotifier {
   //recebe como parâmetro um context que será passado para o loading e para as mensagens
   //como parâmetro, recebe-se o typedef SuccessVoidCallBack
   //como parâmetro opcional, recebe o typedef ErrorVoidCallBack
-  void listener({
-    required BuildContext context,
-    required SuccessVoidCallBack successCallBack,
-    ErrorVoidCallBack? errorCallBack
-  }) {
-    
+  void listener(
+      {required BuildContext context,
+      required SuccessVoidCallBack successCallBack,
+      EveryVoidCallBack? everyCallBack,
+      ErrorVoidCallBack? errorCallBack}) {
     //"pendura" um listener na instância
     changeNotifier.addListener(() {
-      
+      //caso exista alguma mensagem, aciona-se o método everyCallBack
+      if (everyCallBack != null) {
+        everyCallBack(changeNotifier, this);
+      }
+
       //caso o changeNotifier pede para mostrar um loading
       if (changeNotifier.loading) {
         //loader do pacote flutter_overlay_loader
@@ -50,10 +53,8 @@ class DefaultListenerNotifier {
         }
 
         messagesNoMixin.showError(
-          changeNotifier.error ?? 'Oops.. ocorreu um erro :(',
-          context: context
-        );
-        
+            changeNotifier.error ?? 'Oops.. ocorreu um erro :(',
+            context: context);
       } else if (changeNotifier.isSuccess) {
         //invoca-se o método atribuindo o changeNotifier e a própria instância
         successCallBack(changeNotifier, this);
@@ -69,6 +70,12 @@ class DefaultListenerNotifier {
 
 //adiciona-se um typedef para o controle do caso de sucesso
 typedef SuccessVoidCallBack = void Function(
+  DefaultChangeNotifier notifier,
+  DefaultListenerNotifier listenerInstance,
+);
+
+//adiciona-se um typedef para passagem de mensagens
+typedef EveryVoidCallBack = void Function(
   DefaultChangeNotifier notifier,
   DefaultListenerNotifier listenerInstance,
 );
