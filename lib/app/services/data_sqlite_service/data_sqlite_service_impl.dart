@@ -1,5 +1,4 @@
-
-
+import 'package:basics/app/models/data_sqlite_model.dart';
 import 'package:basics/app/repositories/data_sqlite_repository/data_sqlite_repository.dart';
 
 import './data_sqlite_service.dart';
@@ -9,13 +8,15 @@ class DataSqliteServiceImpl implements DataSqliteService {
   final DataSqliteRepository _dataSqliteRepository;
 
   //recebe-se no construtor
-  DataSqliteServiceImpl(
-      {required DataSqliteRepository dataSqliteRepository})
+  DataSqliteServiceImpl({required DataSqliteRepository dataSqliteRepository})
       : _dataSqliteRepository = dataSqliteRepository;
 
-  //somente um proxy que chama o método save do repository
+  //Método para salvar. Somente um proxy que chama o método save do repository
   @override
   Future<void> save(DateTime date, String description) =>
       _dataSqliteRepository.save(date, description);
 
+  //busca de todos os registros. Funcionará como proxy, sem lógica implementada
+  @override
+  Future<List<DataSqliteModel>> findAll() => _dataSqliteRepository.findAll();
 }

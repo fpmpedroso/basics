@@ -42,24 +42,6 @@ class DataSqliteController extends DefaultChangeNotifier {
 
   //faz o processo de salvamento dos dados no database
   void save(String description) async {
-    /*
-    showLoadingAndResetState();
-
-    //reseta qualquer tipo de msg
-    msgSucesso = null;
-    notifyListeners();
-
-    await Future.delayed(const Duration(seconds: 2));
-
-    hideLoading();
-    success();
-
-    //cria a msg de sucesso
-    msgSucesso = 'Sucesso :)';
-    notifyListeners();
-    */
-
-    
     try {
       showLoadingAndResetState();
       
@@ -88,6 +70,11 @@ class DataSqliteController extends DefaultChangeNotifier {
       hideLoading();
       notifyListeners();
     }
+    
+  }
+
+  //faz o processo de busca de todos os dados
+  void findAll() async{
     
   }
 }

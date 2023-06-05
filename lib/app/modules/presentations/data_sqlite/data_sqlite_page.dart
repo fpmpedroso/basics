@@ -1,11 +1,11 @@
 import 'package:basics/app/core/notifier/default_listener_notifier.dart';
-import 'package:basics/app/core/ui/helpers/loader.dart';
 import 'package:basics/app/core/ui/helpers/messages.dart';
 import 'package:basics/app/core/ui/helpers/messages_no_mixin.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_controller.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/widget/calendar_widget.dart';
+import 'package:basics/app/modules/presentations/data_sqlite/widget/list_view_dados.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -255,6 +255,11 @@ class _DataSqlitePageState extends State<DataSqlitePage>
                       const SizedBox(
                         height: 20,
                       ),
+                      Divider(
+                        color: context.colors.darkGrey,
+                        thickness: 2,
+                      ),
+                      const ListViewDados(),
                     ],
                   ),
                 ),
