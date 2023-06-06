@@ -3,6 +3,7 @@
 
 import 'package:basics/app/core/logger/app_logger.dart';
 import 'package:basics/app/core/notifier/default_change_notifier.dart';
+import 'package:basics/app/models/data_sqlite_model.dart';
 import 'package:basics/app/services/data_sqlite_service/data_sqlite_service.dart';
 
 class DataSqliteController extends DefaultChangeNotifier {
@@ -17,6 +18,9 @@ class DataSqliteController extends DefaultChangeNotifier {
 
   //armazena-se a data selecionada
   DateTime? _selectedDate;
+
+  //armazena a lista de dados
+  var listaDados = <DataSqliteModel>[];
 
   //construtor para inicializar o dataSqliteService
   DataSqliteController(
@@ -44,10 +48,10 @@ class DataSqliteController extends DefaultChangeNotifier {
   void save(String description) async {
     try {
       showLoadingAndResetState();
-      
+
       //reseta qualquer tipo de msg
       msgSucesso = null;
-      
+
       notifyListeners();
 
       //certifica-se que o usuário setou a data
@@ -56,25 +60,39 @@ class DataSqliteController extends DefaultChangeNotifier {
 
         //transfere a msg de sucesso
         msgSucesso = 'Dados cadastrados :)';
-        
+
         //aciona o método para sucesso
         success();
       } else {
         //aciona o método para exibir o erro
-        setError('Ops.. a data não foi inserirda :(');
+        setError('Oops.. a data não foi inserirda :(');
       }
     } catch (e, s) {
       _log.error('erro ao salvar os dados', e, s);
-      setError('Opss.. erro ao salvar os dados :(');
+      setError('Oops.. erro ao salvar os dados :(');
     } finally {
       hideLoading();
       notifyListeners();
     }
-    
   }
 
   //faz o processo de busca de todos os dados
-  void findAll() async{
-    
+  Future<void> findAll() async {
+    try {
+      //tratativas iniciais
+      showLoadingAndResetState();
+      notifyListeners();
+
+      //chama o método para obter a lista de dados
+      final result = await _dataSqliteService.findAll();
+
+      listaDados = [...result];
+    } catch (e, s) {
+      _log.error('erro ao pesquisar os dados', e, s);
+      setError('Oops.. erro ao pesquisar os dados');
+    } finally {
+      hideLoading();
+      notifyListeners();
+    }
   }
 }

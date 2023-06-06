@@ -25,6 +25,7 @@ import 'package:basics/app/modules/presentations/rotations/rotations_page.dart';
 import 'package:basics/app/modules/presentations/run_server/run_server_page.dart';
 import 'package:basics/app/modules/presentations/show_messages/show_messages_page.dart';
 import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
+import 'package:basics/app/modules/presentations/visibility_widget/visibility_widget_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/elaborated_stack_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/widget_stacks_page.dart';
 import 'package:provider/provider.dart';
@@ -57,6 +58,7 @@ class PresentationsModule extends ProjetoModule {
       '/gerenciaValueNotifier' : (context) => const GerenciaValueNotifierPage(),
       '/gerenciaChangeNotifier' : (context) => const GerenciaChangeNotifierPage(),
       '/listenerLoader': (context) => ListenerLoaderPage(controller: context.read(),),
+      '/visibility': (context) => const VisibilityWidgetPage(),
       
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica

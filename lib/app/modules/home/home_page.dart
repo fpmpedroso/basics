@@ -169,6 +169,12 @@ class HomePage extends StatelessWidget {
                   },
                   label: 'Provider'
                 ),
+                ButtonWidget.primary(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/visibility');
+                  },
+                  label: 'Visibility'
+                ),
                 Divider(
                   thickness: 1,
                   height: 50,

@@ -83,6 +83,10 @@ class _DataSqlitePageState extends State<DataSqlitePage>
         });
 
     //FIM: utilização do controle de notificação de loader e msg
+
+    //carregamento da lista de dados
+    widget._controller.findAll();
+
   }
 
   @override
