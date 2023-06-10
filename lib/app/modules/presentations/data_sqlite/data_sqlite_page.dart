@@ -1,8 +1,10 @@
 import 'package:basics/app/core/notifier/default_listener_notifier.dart';
 import 'package:basics/app/core/ui/helpers/messages.dart';
 import 'package:basics/app/core/ui/helpers/messages_no_mixin.dart';
+import 'package:basics/app/core/ui/helpers/size_extensions.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
+import 'package:basics/app/models/data_sqlite_model.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_controller.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/widget/calendar_widget.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/widget/list_view_dados.dart';
@@ -84,9 +86,10 @@ class _DataSqlitePageState extends State<DataSqlitePage>
 
     //FIM: utilização do controle de notificação de loader e msg
 
-    //carregamento da lista de dados
-    widget._controller.findAll();
-
+    //espera-se a tela ser carregada e chama o método para buscar os dados
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<DataSqliteController>().findAll();
+    });
   }
 
   @override
@@ -263,7 +266,35 @@ class _DataSqlitePageState extends State<DataSqlitePage>
                         color: context.colors.darkGrey,
                         thickness: 2,
                       ),
-                      const ListViewDados(),
+                      /*ListViewDados(
+                        dataSqliteModel: DataSqliteModel(
+                          id: 01,
+                          dateTime: DateTime.now(),
+                          descricao: 'descrição',
+                        ),
+                      ),*/
+                      SizedBox(
+                        width: context.percentWidth(0.8),
+                        height: context.percentWidth(0.6),
+                        child: Consumer<DataSqliteController>(
+                          builder: (_, controller, __) {
+                            return ListView.builder(
+                              padding: const EdgeInsets.only(left: 10),
+                              itemCount: controller.listaDados.length,
+                              itemBuilder: (context, index) {
+                                return ListTile(
+                                  title: Text(
+                                    controller.listaDados[index].descricao
+                                  ),
+                                  subtitle: Text(
+                                    controller.listaDados[index].dateTime.toString()
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      ),
                     ],
                   ),
                 ),

@@ -84,9 +84,11 @@ class DataSqliteController extends DefaultChangeNotifier {
       notifyListeners();
 
       //chama o método para obter a lista de dados
-      final result = await _dataSqliteService.findAll();
+      final newList = await _dataSqliteService.findAll();
 
-      listaDados = [...result];
+      //atualiza a lista já existente com os novos valores;
+      listaDados = [...newList];
+      
     } catch (e, s) {
       _log.error('erro ao pesquisar os dados', e, s);
       setError('Oops.. erro ao pesquisar os dados');

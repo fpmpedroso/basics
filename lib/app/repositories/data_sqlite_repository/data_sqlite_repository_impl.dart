@@ -55,7 +55,7 @@ class DataSqliteRepositoryImpl implements DataSqliteRepository {
       final result = await conn.rawQuery(query);
 
       //converte-se o resultado para uma lista através do chamamento do construtor utilitário de conversão
-      return result.map((e) => DataSqliteModel.loadFromDB(e)).toList();
+      return result.map<DataSqliteModel>((e) => DataSqliteModel.loadFromDB(e)).toList();
     
     } catch (e, s) {
       _log.error('erro no findAll', e, s);
