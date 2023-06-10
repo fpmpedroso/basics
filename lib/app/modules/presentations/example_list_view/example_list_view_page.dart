@@ -111,7 +111,8 @@ class ExampleListViewPage extends StatelessWidget {
                       subtitle: const Text('subtítulo'),
                       leading: const CircleAvatar(
                         maxRadius: 50,
-                        backgroundImage: AssetImage('assets/images/img_demo.jpeg'),
+                        backgroundImage:
+                            AssetImage('assets/images/img_demo.jpeg'),
                       ),
                       trailing: const CircleAvatar(),
                     );
@@ -128,12 +129,88 @@ class ExampleListViewPage extends StatelessWidget {
               ),
               Center(
                 child: ButtonWidget.primary(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/complexScreen');
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/complexScreen');
+                    },
+                    label: 'Visualizar'),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Text(
+                '5) Lista de Cards',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              SizedBox(
+                width: context.percentWidth(0.5),
+                height: context.percentWidth(0.4),
+                child: ListView.builder(
+                  padding: const EdgeInsets.only(left: 10),
+                  itemCount: 2,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: ListTile(
+                        title: Text('Índice $index'),
+                        subtitle: const Text('subtítulo'),
+                        leading: const CircleAvatar(),
+                      ),
+                    );
                   },
-                  label: 'Visualizar'
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Text(
+                '6) Dismissible card',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              SizedBox(
+                width: context.percentWidth(0.5),
+                height: context.percentWidth(0.4),
+                child: ListView.builder(
+                  padding: const EdgeInsets.only(left: 10),
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Dismissible(
+                      key: Key(index.toString()),
+                      background: Container(
+                        color: Colors.green,
+                        child: const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Icon(Icons.save, color: Colors.white,),
+                        ),
+                      ),
+                      secondaryBackground: Container(
+                        color: context.colors.redWarning,
+                        child: const Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(Icons.delete, color: Colors.white,),
+                        ),
+                      ),
+                      onDismissed: (direction) {
+                        if (direction == DismissDirection.startToEnd) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('$index item salvo')));
+                          //saveitem(index);
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('item $index deletado')));
+                          //deletItem(index);
+                        }
+                      },
+                      //confirmDismiss: ver no site,
+                      child: ListTile(
+                        title: Text('Índice $index'),
+                        subtitle: const Text('subtítulo'),
+                        leading: const CircleAvatar(),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),

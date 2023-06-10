@@ -86,4 +86,4 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - configuração do ícone do App;
 - configuração da Splash Screen;
 - packages para usar o sqlite;
-- 
+- formatação de data/string em DataSqlitePage;
