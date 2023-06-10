@@ -73,6 +73,9 @@ class DataSqliteController extends DefaultChangeNotifier {
     } finally {
       hideLoading();
       notifyListeners();
+
+      //busca todos os registros e atualiza a tela
+      findAll();
     }
   }
 
@@ -88,7 +91,6 @@ class DataSqliteController extends DefaultChangeNotifier {
 
       //atualiza a lista já existente com os novos valores;
       listaDados = [...newList];
-      
     } catch (e, s) {
       _log.error('erro ao pesquisar os dados', e, s);
       setError('Oops.. erro ao pesquisar os dados');

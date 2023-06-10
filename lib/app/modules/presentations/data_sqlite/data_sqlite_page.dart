@@ -284,11 +284,8 @@ class _DataSqlitePageState extends State<DataSqlitePage>
                               itemBuilder: (context, index) {
                                 return ListTile(
                                   title: Text(
-                                    controller.listaDados[index].descricao
-                                  ),
-                                  subtitle: Text(
-                                    controller.listaDados[index].dateTime.toString()
-                                  ),
+                                      controller.listaDados[index].descricao),
+                                  subtitle: Text(controller.listaDados[index].dateTime.toString()),
                                 );
                               },
                             );
