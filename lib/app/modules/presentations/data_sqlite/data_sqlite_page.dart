@@ -266,32 +266,7 @@ class _DataSqlitePageState extends State<DataSqlitePage>
                         color: context.colors.darkGrey,
                         thickness: 2,
                       ),
-                      /*ListViewDados(
-                        dataSqliteModel: DataSqliteModel(
-                          id: 01,
-                          dateTime: DateTime.now(),
-                          descricao: 'descrição',
-                        ),
-                      ),*/
-                      SizedBox(
-                        width: context.percentWidth(0.8),
-                        height: context.percentWidth(0.6),
-                        child: Consumer<DataSqliteController>(
-                          builder: (_, controller, __) {
-                            return ListView.builder(
-                              padding: const EdgeInsets.only(left: 10),
-                              itemCount: controller.listaDados.length,
-                              itemBuilder: (context, index) {
-                                return ListTile(
-                                  title: Text(
-                                      controller.listaDados[index].descricao),
-                                  subtitle: Text(controller.listaDados[index].dateTime.toString()),
-                                );
-                              },
-                            );
-                          },
-                        ),
-                      ),
+                      const ListViewDados(),
                     ],
                   ),
                 ),
