@@ -6,4 +6,7 @@ abstract class DataSqliteRepository {
 
   //método para buscar todos os dados
   Future<List<DataSqliteModel>> findAll();
+
+  //método para exclusão por id
+  Future<void> delete(int id);
 }

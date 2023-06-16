@@ -22,6 +22,7 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - driver de conexão com banco de dados sqlite: sqflite ^2.2.8+4;
 - recuperação da path do banco de dados em cada dispositivo: path ^1.8.3;
 - formatação de datas: intl ^0.17.0;
+- slide em listas: flutter_slidable ^3.0.0
 
 
 ## tarefas

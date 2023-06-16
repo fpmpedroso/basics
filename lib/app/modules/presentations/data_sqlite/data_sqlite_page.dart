@@ -1,10 +1,8 @@
 import 'package:basics/app/core/notifier/default_listener_notifier.dart';
 import 'package:basics/app/core/ui/helpers/messages.dart';
 import 'package:basics/app/core/ui/helpers/messages_no_mixin.dart';
-import 'package:basics/app/core/ui/helpers/size_extensions.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
-import 'package:basics/app/models/data_sqlite_model.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_controller.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/widget/calendar_widget.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/widget/list_view_dados.dart';
@@ -266,7 +264,7 @@ class _DataSqlitePageState extends State<DataSqlitePage>
                         color: context.colors.darkGrey,
                         thickness: 2,
                       ),
-                      const ListViewDados(),
+                      ListViewDados(controller: context.read()),
                     ],
                   ),
                 ),

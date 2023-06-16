@@ -99,4 +99,29 @@ class DataSqliteController extends DefaultChangeNotifier {
       notifyListeners();
     }
   }
+
+  //faz a exclusão de dados pelo id
+  Future<void> delete(int id) async {
+    try {
+      //tratamento inicial
+      showLoadingAndResetState();
+      notifyListeners();
+
+      //chama-se o método para deletar
+      await _dataSqliteService.delete(id);
+
+      //chama o método para obter a lista de dados
+      final newList = await _dataSqliteService.findAll();
+
+      //atualiza a lista já existente com os novos valores;
+      listaDados = [...newList];
+      
+    } catch (e, s) {
+      _log.error('erro ao excluir os dados', e, s);
+      setError('Oops.. erro ao excluir o item');
+    } finally {
+      hideLoading();
+      notifyListeners();
+    }
+  }
 }

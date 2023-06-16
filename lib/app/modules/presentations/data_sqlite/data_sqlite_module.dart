@@ -1,5 +1,4 @@
 import 'package:basics/app/core/modules/projeto_module.dart';
-import 'package:basics/app/models/data_sqlite_model.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_controller.dart';
 import 'package:basics/app/modules/presentations/data_sqlite/data_sqlite_page.dart';
 import 'package:basics/app/repositories/data_sqlite_repository/data_sqlite_repository.dart';

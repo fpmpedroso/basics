@@ -3,6 +3,7 @@ import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
 import 'package:basics/app/core/ui/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ExampleListViewPage extends StatelessWidget {
   const ExampleListViewPage({Key? key}) : super(key: key);
@@ -160,7 +161,7 @@ class ExampleListViewPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 20,
               ),
               Text(
                 '6) Dismissible card',
@@ -169,7 +170,7 @@ class ExampleListViewPage extends StatelessWidget {
               ),
               SizedBox(
                 width: context.percentWidth(0.5),
-                height: context.percentWidth(0.4),
+                height: context.percentWidth(0.8),
                 child: ListView.builder(
                   padding: const EdgeInsets.only(left: 10),
                   itemCount: 10,
@@ -180,14 +181,20 @@ class ExampleListViewPage extends StatelessWidget {
                         color: Colors.green,
                         child: const Align(
                           alignment: Alignment.centerLeft,
-                          child: Icon(Icons.save, color: Colors.white,),
+                          child: Icon(
+                            Icons.save,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       secondaryBackground: Container(
                         color: context.colors.redWarning,
                         child: const Align(
                           alignment: Alignment.centerRight,
-                          child: Icon(Icons.delete, color: Colors.white,),
+                          child: Icon(
+                            Icons.delete,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       onDismissed: (direction) {
@@ -202,6 +209,65 @@ class ExampleListViewPage extends StatelessWidget {
                         }
                       },
                       //confirmDismiss: ver no site,
+                      child: ListTile(
+                        title: Text('Índice $index'),
+                        subtitle: const Text('subtítulo'),
+                        leading: const CircleAvatar(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                '7) Slidable: um package que ajuda na construção',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              SizedBox(
+                width: context.percentWidth(0.5),
+                height: context.percentWidth(0.8),
+                child: ListView.builder(
+                  padding: const EdgeInsets.only(left: 10),
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Slidable(
+                      //INÍCIO: configurações para o Slidable
+                      key: ValueKey(index), //somente se for dismiss
+                      startActionPane: ActionPane(
+                        motion: const BehindMotion(), 
+                        children: [
+                          SlidableAction(
+                            onPressed:(context) {},
+                            backgroundColor: context.colors.lightBlue,
+                            icon: Icons.message,
+                          ),
+                          SlidableAction(
+                            onPressed:(context) {},
+                            backgroundColor: context.colors.lightGrey,
+                            icon: Icons.call,
+                          ),
+                        ]
+                      ),
+                      endActionPane: ActionPane(
+                        dismissible: DismissiblePane(   //somente se for dismiss
+                          onDismissed: () {
+                            //ação
+                          },
+                        ),
+                        motion: const DrawerMotion(), 
+                        children: [
+                          SlidableAction(
+                            onPressed:(context) {},
+                            label: 'Delete',
+                            backgroundColor: context.colors.redWarning,
+                            icon: Icons.delete,
+                          ),
+                        ]
+                      ),
+                      //FIM: configurações para o Slidable
                       child: ListTile(
                         title: Text('Índice $index'),
                         subtitle: const Text('subtítulo'),

@@ -19,4 +19,8 @@ class DataSqliteServiceImpl implements DataSqliteService {
   //busca de todos os registros. Funcionará como proxy, sem lógica implementada
   @override
   Future<List<DataSqliteModel>> findAll() => _dataSqliteRepository.findAll();
+
+  //exclusão por id
+  @override
+  Future<void> delete(int id) => _dataSqliteRepository.delete(id);
 }

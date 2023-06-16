@@ -55,12 +55,34 @@ class DataSqliteRepositoryImpl implements DataSqliteRepository {
       final result = await conn.rawQuery(query);
 
       //converte-se o resultado para uma lista através do chamamento do construtor utilitário de conversão
-      return result.map<DataSqliteModel>((e) => DataSqliteModel.loadFromDB(e)).toList();
-    
+      return result
+          .map<DataSqliteModel>((e) => DataSqliteModel.loadFromDB(e))
+          .toList();
     } catch (e, s) {
       _log.error('erro no findAll', e, s);
 
       throw Failure(message: 'Oops.. não foi possível buscar os dados :(');
+    }
+  }
+
+  //método para exclusão por id
+  @override
+  Future<void> delete(int id) async {
+    try {
+      final conn = await _sqliteConnectionFactory.openConnection();
+
+      var query = '''
+        DELETE
+        FROM tabela_01
+        WHERE id = ?
+      ''';
+
+      //executa o sql (não precisa de await)
+      conn.rawQuery(query, [id]);
+    } catch (e, s) {
+      _log.error('erro na exclusão', e, s);
+
+      throw Failure(message: 'Oops.. não foi possível exlcuir o item :(');
     }
   }
 }

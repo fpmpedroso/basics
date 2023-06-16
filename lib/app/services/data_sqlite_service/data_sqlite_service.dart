@@ -6,4 +6,7 @@ abstract class DataSqliteService {
 
   //busca de todos os dados
   Future<List<DataSqliteModel>> findAll();
+
+  //faz a exclusão por id
+  Future<void> delete(int id);
 }
