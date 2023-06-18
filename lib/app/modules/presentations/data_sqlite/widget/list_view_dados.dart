@@ -38,7 +38,7 @@ class _ListViewDadosState extends State<ListViewDados> {
                     ActionPane(motion: const DrawerMotion(), children: [
                   SlidableAction(
                     onPressed: (context) {
-                      widget._controller.delete(index);
+                      widget._controller.delete(controller.listaDados[index].id);
                     },
                     //label: '$index',
                     backgroundColor: context.colors.redWarning,

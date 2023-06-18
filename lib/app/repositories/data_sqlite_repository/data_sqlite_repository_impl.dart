@@ -25,7 +25,7 @@ class DataSqliteRepositoryImpl implements DataSqliteRepository {
       //abre-se uma conexão
       final conn = await _sqliteConnectionFactory.openConnection();
 
-      //cia-se a query
+      //inicia-se a query
       await conn.insert('tabela_01', {
         'id': null,
         'data_hora': date.toIso8601String(), //passa a data para String
@@ -77,8 +77,9 @@ class DataSqliteRepositoryImpl implements DataSqliteRepository {
         WHERE id = ?
       ''';
 
-      //executa o sql (não precisa de await)
-      conn.rawQuery(query, [id]);
+      //executa o sql
+      await conn.rawDelete(query, [id]);
+      
     } catch (e, s) {
       _log.error('erro na exclusão', e, s);
 

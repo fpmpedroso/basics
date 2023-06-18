@@ -96,6 +96,11 @@ class DataSqliteController extends DefaultChangeNotifier {
       setError('Oops.. erro ao pesquisar os dados');
     } finally {
       hideLoading();
+
+      //reseta o status
+      resetState();
+      msgSucesso = null;
+
       notifyListeners();
     }
   }
@@ -115,12 +120,22 @@ class DataSqliteController extends DefaultChangeNotifier {
 
       //atualiza a lista já existente com os novos valores;
       listaDados = [...newList];
-      
+
+      //transfere a msg de sucesso
+      msgSucesso = 'Item excluído :)';
+
+      //aciona o método para sucesso
+      success();
     } catch (e, s) {
       _log.error('erro ao excluir os dados', e, s);
       setError('Oops.. erro ao excluir o item');
     } finally {
       hideLoading();
+      notifyListeners();
+
+      //reseta o status
+      resetState();
+      msgSucesso = null;
       notifyListeners();
     }
   }

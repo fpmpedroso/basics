@@ -1,5 +1,5 @@
 import 'package:basics/app/core/notifier/default_listener_notifier.dart';
-import 'package:basics/app/core/ui/helpers/messages.dart';
+//import 'package:basics/app/core/ui/helpers/messages.dart';
 import 'package:basics/app/core/ui/helpers/messages_no_mixin.dart';
 import 'package:basics/app/core/ui/styles/colors_app.dart';
 import 'package:basics/app/core/ui/styles/texts_app.dart';
@@ -22,7 +22,8 @@ class DataSqlitePage extends StatefulWidget {
 }
 
 class _DataSqlitePageState extends State<DataSqlitePage>
-    with Messages<DataSqlitePage> {
+//with Messages<DataSqlitePage> {
+{
   //chave do formulário
   final _formKey = GlobalKey<FormState>();
 
@@ -67,7 +68,10 @@ class _DataSqlitePageState extends State<DataSqlitePage>
             if (notifier.hasInfo) {
               //pode usar com mixin mesmo
               //pode forçar pq foi verificado dentro da controlelr
-              showSuccess(notifier.msgSucesso!);
+              //showSuccess(notifier.msgSucesso!);
+              context
+                  .read<MessagesNoMixin>()
+                  .showSuccess(notifier.msgSucesso!, context: context);
             }
           }
         },
@@ -253,6 +257,9 @@ class _DataSqlitePageState extends State<DataSqlitePage>
                           if (formValid) {
                             //widget para chamar as variáveis iniciadas
                             widget._controller.save(_formDescriptionEC.text);
+
+                            //limpa-se os dados
+                            _formDescriptionEC.clear();
                           }
                         },
                         child: const Text('Salvar'),
