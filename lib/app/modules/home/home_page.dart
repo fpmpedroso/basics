@@ -22,6 +22,12 @@ class HomePage extends StatelessWidget {
               children: [
                 ButtonWidget.primary(
                   onPressed: () {
+                    Navigator.of(context).pushNamed('/homePage2');
+                  },
+                  label: 'New Home'
+                ),
+                ButtonWidget.primary(
+                  onPressed: () {
                     Navigator.of(context).pushNamed('/newProject');
                   },
                   label: 'Criar projeto'

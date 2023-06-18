@@ -34,10 +34,10 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - criação de componentes;
 - helpers;
 - splash page;
-- 
+- módulos em geral;
 
 
-## passo-a-passo
+## passo-a-passo (idealização)
 - importação/instalação de provider: ^6.0.5;
 - criação da pasta /app;
 - criação do arquivo /app/app_module.dart;
