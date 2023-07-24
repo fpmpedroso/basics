@@ -22,8 +22,8 @@ class _SplashPageState extends State<SplashPage>
   
   //função para aguardar 3s e levar o usuário para Home
   void startTimer() {
-    Timer(const Duration(seconds: 3), () async {
-      Navigator.of(context).popAndPushNamed('/home');
+    Timer(const Duration(seconds: 2), () async {
+      Navigator.of(context).popAndPushNamed('/homePage2');
     });
   }
 

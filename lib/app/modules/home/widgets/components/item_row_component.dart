@@ -5,18 +5,15 @@ import 'package:flutter/material.dart';
 
 class ItemRowComponent extends StatelessWidget {
   final String _textItem;
-  final Color _colorItem;
   final IconData _iconItem;
   final String _urlItem;
 
   const ItemRowComponent(
       {super.key,
       required String textItem,
-      required Color colorItem,
       required IconData iconItem,
       required String urlItem,
   }) :  _textItem = textItem,
-        _colorItem = colorItem,
         _iconItem = iconItem,
         _urlItem = urlItem;
 
@@ -28,21 +25,24 @@ class ItemRowComponent extends StatelessWidget {
       },
       child: Container(
         width: context.percentWidth(0.45),
-        height: context.percentWidth(0.30),
-        color: _colorItem,
+        height: context.percentWidth(0.25),
+        decoration: BoxDecoration(
+          color: context.colors.lightGrey,
+          borderRadius: BorderRadius.circular(5),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               _iconItem,
               color: context.colors.whiteApp,
-              size: context.percentWidth(0.15),
+              size: context.percentWidth(0.10),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
                 _textItem,
-                style: context.textsApp.textBold
+                style: context.textsApp.textRegular
                     .copyWith(fontSize: 16, color: context.colors.whiteApp),
               ),
             ),
