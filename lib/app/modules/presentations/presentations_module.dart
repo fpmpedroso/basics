@@ -1,4 +1,5 @@
 import 'package:basics/app/core/modules/projeto_module.dart';
+import 'package:basics/app/modules/presentations/bottom_sheet/bottom_sheet_page.dart';
 import 'package:basics/app/modules/presentations/buttons_type/buttons_type_page.dart';
 import 'package:basics/app/modules/presentations/complex_form/complex_form_page.dart';
 import 'package:basics/app/modules/presentations/complex_screen/complex_screen_page.dart';
@@ -59,6 +60,7 @@ class PresentationsModule extends ProjetoModule {
       '/gerenciaChangeNotifier' : (context) => const GerenciaChangeNotifierPage(),
       '/listenerLoader': (context) => ListenerLoaderPage(controller: context.read(),),
       '/visibility': (context) => const VisibilityWidgetPage(),
+      '/bottomSheet':(context) => const BottomSheetPage(),
       
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica

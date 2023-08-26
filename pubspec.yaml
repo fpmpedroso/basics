@@ -42,7 +42,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   sqflite: ^2.2.8+4
   path: ^1.8.2
-  intl: ^0.17.0
+  intl: ^0.18.0
   flutter_slidable: ^3.0.0
 
 

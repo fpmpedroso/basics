@@ -99,9 +99,9 @@ class DialogsPage extends StatelessWidget {
                       builder: (_) {
                         return AlertDialog(
                           title: const Text('Título'),
-                          content: SingleChildScrollView(
+                          content: const SingleChildScrollView(
                             child: ListBody(
-                              children: const [
+                              children: [
                                 Padding(
                                   padding: EdgeInsets.all(8),
                                   child: Text('nononon'),

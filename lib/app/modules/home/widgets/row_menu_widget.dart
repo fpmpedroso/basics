@@ -12,9 +12,9 @@ class RowMenuWidget extends StatelessWidget {
       padding: const EdgeInsets.all(2),
       child: Column(
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'Novo Projeto', 
                 iconItem: Icons.add_box_outlined,
@@ -30,9 +30,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'Iniciar Servidor', 
                 iconItem: Icons.computer_outlined,
@@ -48,9 +48,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'Containers', 
                 iconItem: Icons.move_to_inbox,
@@ -66,9 +66,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'Navegação', 
                 iconItem: Icons.assistant_navigation,
@@ -84,9 +84,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'Botões', 
                 iconItem: Icons.smart_button_outlined,
@@ -102,9 +102,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'Complex Screen',  
                 iconItem: Icons.close_fullscreen_outlined,
@@ -120,9 +120,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'Formulário', 
                 iconItem: Icons.dynamic_form_outlined,
@@ -138,9 +138,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const[
+            children: [
               ItemRowComponent(
                 textItem: 'Complex form',  
                 iconItem: Icons.dynamic_feed_sharp,
@@ -156,9 +156,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'BottomNavigator', 
                 iconItem: Icons.vertical_align_bottom_outlined,
@@ -174,9 +174,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'PageView',  
                 iconItem: Icons.pageview_outlined,
@@ -192,9 +192,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'SetState',  
                 iconItem: Icons.waving_hand_outlined,
@@ -210,9 +210,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'ChangeNotifier', 
                 iconItem: Icons.waving_hand_outlined,
@@ -228,9 +228,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'Loader', 
                 iconItem: Icons.downloading_outlined,
@@ -246,9 +246,9 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               ItemRowComponent(
                 textItem: 'BD interno',
                 iconItem: Icons.adb_outlined,
@@ -259,6 +259,19 @@ class RowMenuWidget extends StatelessWidget {
                 iconItem: Icons.home_outlined,
                 urlItem: '/home',
               ),
+            ],
+          ),
+          SizedBox(
+            height: context.percentWidth(.05),
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ItemRowComponent(
+                textItem: 'BottomSheet', 
+                iconItem: Icons.account_box_outlined, 
+                urlItem: '/bottomSheet',
+              )
             ],
           ),
         ],

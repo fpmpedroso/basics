@@ -22,12 +22,6 @@ class TopMenuPage extends StatelessWidget {
           ),
         ],
       ),
-      drawer: Drawer(
-        backgroundColor: context.colors.lightBlue,
-        child: const Center(
-          child: Text('Item do menu'),
-        ),
-      ),
       endDrawer: const Drawer(
         child: Center(
           child: Text('EndDrawer')

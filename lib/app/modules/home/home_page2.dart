@@ -8,10 +8,10 @@ class HomePage2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: const [
+          children: [
             AppbarWidget(),
             SizedBox(
               height: 30,
