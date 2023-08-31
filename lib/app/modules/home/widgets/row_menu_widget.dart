@@ -271,6 +271,11 @@ class RowMenuWidget extends StatelessWidget {
                 textItem: 'BottomSheet', 
                 iconItem: Icons.account_box_outlined, 
                 urlItem: '/bottomSheet',
+              ),
+              ItemRowComponent(
+                textItem: 'SdkSuperior', 
+                iconItem: Icons.android, 
+                urlItem: '/sdkSuperior',
               )
             ],
           ),
