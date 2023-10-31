@@ -11,13 +11,18 @@ class VisibilityWidgetPage extends StatefulWidget {
 
 class _VisibilityWidgetPageState extends State<VisibilityWidgetPage> {
   bool _visibility = true;
+  bool _visibility2 = true;
 
   void changeVisibility() {
-    
     setState(() {
-      _visibility = !_visibility;  
+      _visibility = !_visibility;
     });
-    
+  }
+
+  void changeVisibility2() {
+    setState(() {
+      _visibility2 = !_visibility2;
+    });
   }
 
   @override
@@ -84,6 +89,49 @@ class _VisibilityWidgetPageState extends State<VisibilityWidgetPage> {
                   ),
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Text(
+              '# Widget OffStage',
+              style: context.textsApp.textBold
+                  .copyWith(fontSize: 16, color: context.colors.darkBlue),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              '> Utiliza-se OffStage para carregar ou não um widget',
+              style: context.textsApp.textRegular
+                  .copyWith(fontSize: 14, color: context.colors.darkGrey),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: () => changeVisibility2(),
+                  child: Container(
+                    width: 60,
+                    height: 60,
+                    color: context.colors.darkBlue,
+                    child: Center(
+                      child: Text(
+                        'Click',
+                        style: context.textsApp.textRegular.copyWith(color: context.colors.whiteApp),
+                      ),
+                    ),
+                  ),
+                ),
+                Offstage(
+                  offstage: _visibility2,
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    color: context.colors.darkBlue,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
