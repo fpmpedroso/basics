@@ -16,6 +16,7 @@ import 'package:basics/app/modules/presentations/how_navigate/how_navigate_page.
 import 'package:basics/app/modules/presentations/launch_sreen/launch_screen_page.dart';
 import 'package:basics/app/modules/presentations/listener_loader/listener_loader_controller.dart';
 import 'package:basics/app/modules/presentations/listener_loader/listener_loader_page.dart';
+import 'package:basics/app/modules/presentations/local_maps/local_maps_page.dart';
 import 'package:basics/app/modules/presentations/new_bottom_navigator_bar/new_bottom_navigator_bar_page.dart';
 import 'package:basics/app/modules/presentations/new_page_view/page_view_page.dart';
 import 'package:basics/app/modules/presentations/new_form/new_form_page.dart';
@@ -63,6 +64,7 @@ class PresentationsModule extends ProjetoModule {
       '/visibility': (context) => const VisibilityWidgetPage(),
       '/bottomSheet':(context) => const BottomSheetPage(),
       '/sdkSuperior':(context) => const SdkSuperiorPage(),
+      '/location':(context) => const LocalMapsPage(),
       
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica
