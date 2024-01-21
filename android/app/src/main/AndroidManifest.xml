@@ -3,6 +3,9 @@
    <!-- Add these permissions -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!--Waze-->
+    <uses-permission android:name="android.permission.INTERNET" />
     
     <!--For Geolocator-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
