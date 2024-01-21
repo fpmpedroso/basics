@@ -291,11 +291,32 @@ class RowMenuWidget extends StatelessWidget {
                 urlItem: '/location',
               ),
               ItemRowComponent(
-                textItem: 'none', 
-                iconItem: Icons.android, 
+                textItem: 'Geolocator', 
+                iconItem: Icons.location_city_outlined, 
+                urlItem: '/geolocator',
+              )
+            ],
+          ),
+          SizedBox(
+            height: context.percentWidth(.05),
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ItemRowComponent(
+                textItem: 'Waze', 
+                iconItem: Icons.maps_home_work_outlined, 
+                urlItem: '/waze',
+              ),
+              ItemRowComponent(
+                textItem: '--', 
+                iconItem: Icons.output_outlined, 
                 urlItem: '',
               )
             ],
+          ),
+          SizedBox(
+            height: context.percentWidth(.05),
           ),
         ],
       ),
