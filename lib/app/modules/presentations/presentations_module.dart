@@ -30,6 +30,7 @@ import 'package:basics/app/modules/presentations/sdk_superior/sdk_superior_page.
 import 'package:basics/app/modules/presentations/show_messages/show_messages_page.dart';
 import 'package:basics/app/modules/presentations/top_menu/top_menu_page.dart';
 import 'package:basics/app/modules/presentations/visibility_widget/visibility_widget_page.dart';
+import 'package:basics/app/modules/presentations/voice_text/voice_text_page.dart';
 import 'package:basics/app/modules/presentations/waze/waze_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/elaborated_stack_page.dart';
 import 'package:basics/app/modules/presentations/widget_stacks/widget_stacks_page.dart';
@@ -69,6 +70,7 @@ class PresentationsModule extends ProjetoModule {
       '/location':(context) => const LocalMapsPage(),
       '/geolocator':(context) => const GeolocatorPage(),
       '/waze':(context) => const WazePage(),
+      '/voiceText':(context) => const VoiceTextPage(),
       
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica

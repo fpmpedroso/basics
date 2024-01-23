@@ -26,6 +26,7 @@ Foi utilizado Provider. Para garantir facilidade e eficiência no gerencimento d
 - location: ^5.0.3;
 - geolocator: ^10.1.0;
 - url_launcher: ^6.2.3;
+- speech_to_text: ^6.5.1
 
 
 ## tarefas

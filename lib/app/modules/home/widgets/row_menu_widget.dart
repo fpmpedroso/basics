@@ -309,9 +309,9 @@ class RowMenuWidget extends StatelessWidget {
                 urlItem: '/waze',
               ),
               ItemRowComponent(
-                textItem: '--', 
-                iconItem: Icons.output_outlined, 
-                urlItem: '',
+                textItem: 'Voice', 
+                iconItem: Icons.mic_outlined, 
+                urlItem: '/voiceText',
               )
             ],
           ),

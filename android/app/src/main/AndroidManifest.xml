@@ -4,11 +4,14 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
-    <!--Waze-->
+    <!--Waze and speech_to_text-->
     <uses-permission android:name="android.permission.INTERNET" />
     
     <!--For Geolocator-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--For  speech_to_text-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
    <application
         android:label="Basics"

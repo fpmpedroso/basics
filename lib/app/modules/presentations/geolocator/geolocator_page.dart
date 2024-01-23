@@ -14,11 +14,11 @@ class _GeolocatorPageState extends State<GeolocatorPage> {
   late StreamSubscription<Position> positionStream;
 
   //localização do perímetro setada para teste
-  final double targetLatitude = -22.1209386;
-  final double targetLongitude = -51.4141612;
+  final double targetLatitude = -22.14917;
+  final double targetLongitude = -51.39261;
 
   //raio desejado para o perímetro em metros
-  final double targetRadius = 100.0;
+  final double targetRadius = 50.0;
 
   //view
   String view = '';

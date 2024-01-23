@@ -17,8 +17,8 @@ class _LocalMapsPageState extends State<LocalMapsPage> {
   LocationData? currentLocation;
 
   //localização do perímetro setada para teste
-  final double targetLatitude = -22.1209386;
-  final double targetLongitude = -51.4141612;
+  final double targetLatitude = -22.14917;
+  final double targetLongitude = -51.39261;
 
   //raio desejado para o perímetro em metros
   final double targetRadius = 50.0;

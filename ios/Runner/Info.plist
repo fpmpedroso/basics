@@ -68,5 +68,9 @@
 		<array>
 			<string>waze</string>
 		</array>
+		<key>NSSpeechRecognitionUsageDescription</key>
+		<string>We need access to your microphone for speech recognition</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>We need access to your microphone for speech recognition</string>
 	</dict>
 </plist>
