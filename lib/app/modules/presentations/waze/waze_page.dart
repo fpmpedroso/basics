@@ -15,7 +15,7 @@ class WazePage extends StatelessWidget {
       await launchUrl(wazeUrl);
     } else {
       // Handle the error if the URL can't be launched
-      print('Could not launch Waze. Make sure the Waze app is installed.');
+      debugPrint('Could not launch Waze. Make sure the Waze app is installed.');
     }
   }
 
@@ -30,7 +30,7 @@ class WazePage extends StatelessWidget {
             onPressed: () {
               launchWazeWithAddress('Rua Moises Abaid, 181, Jundiaí/SP');
             },
-            child: Text('Navi'),
+            child: const Text('Navi'),
           ),
         ),
     );
