@@ -318,6 +318,24 @@ class RowMenuWidget extends StatelessWidget {
           SizedBox(
             height: context.percentWidth(.05),
           ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ItemRowComponent(
+                textItem: 'Adress', 
+                iconItem: Icons.maps_ugc, 
+                urlItem: '/adress',
+              ),
+              ItemRowComponent(
+                textItem: '--', 
+                iconItem: Icons.unarchive, 
+                urlItem: '',
+              )
+            ],
+          ),
+          SizedBox(
+            height: context.percentWidth(.05),
+          ),
         ],
       ),
     );

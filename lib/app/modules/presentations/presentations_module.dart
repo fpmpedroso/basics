@@ -1,4 +1,5 @@
 import 'package:basics/app/core/modules/projeto_module.dart';
+import 'package:basics/app/modules/presentations/adress_nominatim/adress_nominatim_page.dart';
 import 'package:basics/app/modules/presentations/bottom_sheet/bottom_sheet_page.dart';
 import 'package:basics/app/modules/presentations/buttons_type/buttons_type_page.dart';
 import 'package:basics/app/modules/presentations/complex_form/complex_form_page.dart';
@@ -71,6 +72,7 @@ class PresentationsModule extends ProjetoModule {
       '/geolocator':(context) => const GeolocatorPage(),
       '/waze':(context) => const WazePage(),
       '/voiceText':(context) => const VoiceTextPage(),
+      '/adress':(context) => const AdressNominatimPage(),
       
       //'/gerenciaProvider' : (context) => const GerenciaProviderPage(),
       //a rota passou a estar em AppWidget, pois contém uma dependência específica
