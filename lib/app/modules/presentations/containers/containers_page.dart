@@ -129,6 +129,23 @@ class ContainersPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8)
                 ),
               ),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                '> 6) place holder',
+                style: context.textsApp.textRegular
+                    .copyWith(fontSize: 14, color: context.colors.darkGrey),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Placeholder(
+                fallbackWidth: 60,
+                fallbackHeight: 60,
+                color: context.colors.darkBlue,
+                strokeWidth: 10,
+              ),
             ],
           ),
         ),
